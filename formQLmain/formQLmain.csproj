@@ -212,6 +212,7 @@
     <Compile Include="ModifyDanhSachDoAn.cs" />
     <Compile Include="ModifyTaiKhoan.cs" />
     <Compile Include="ModifyTaiLieuKemTheo.cs" />
+    <Compile Include="OpenHTML.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rptDoann.cs">

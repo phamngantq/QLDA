@@ -121,6 +121,12 @@ JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN";
             rpt.ShowPreview();
         }
 
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+
+        }
+
         private void frmBaocao_Load(object sender, EventArgs e)
         {
 
