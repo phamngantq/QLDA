@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolUser = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,6 +134,7 @@
             this.btnAdmin.Size = new System.Drawing.Size(420, 102);
             this.btnAdmin.TabIndex = 33;
             this.btnAdmin.Text = "Đăng nhập với tư cách quản lý";
+            this.toolUser.SetToolTip(this.btnAdmin, "Nếu bạn là trưởng khoa hoặc quản lý bộ môn\r\n");
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnUser
@@ -149,6 +152,7 @@
             this.btnUser.Size = new System.Drawing.Size(420, 102);
             this.btnUser.TabIndex = 32;
             this.btnUser.Text = "Đăng nhập với tư cách người dùng";
+            this.toolUser.SetToolTip(this.btnUser, "Nếu bạn là sinh viên hoặc giảng viên");
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // label2
@@ -224,5 +228,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolUser;
     }
 }
