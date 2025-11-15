@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.btnEnd = new Guna.UI2.WinForms.Guna2Button();
@@ -40,6 +40,7 @@
             this.btnFirst = new Guna.UI2.WinForms.Guna2Button();
             this.frmEnd = new Guna.UI2.WinForms.Guna2Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btnInBC = new Guna.UI2.WinForms.Guna2Button();
             this.comGT = new System.Windows.Forms.ComboBox();
             this.comTruong = new System.Windows.Forms.ComboBox();
             this.btnFillter = new Guna.UI2.WinForms.Guna2Button();
@@ -50,6 +51,12 @@
             this.toolTipRefresh = new System.Windows.Forms.ToolTip(this.components);
             this.pnlgrid = new System.Windows.Forms.Panel();
             this.grdBaocao = new System.Windows.Forms.DataGridView();
+            this.TENDETAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CHUYENNGANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GVHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAMBAOVE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DSDAdrop = new System.Windows.Forms.Timer(this.components);
             this.TroGiupdrop = new System.Windows.Forms.Timer(this.components);
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -86,13 +93,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.btnInBC = new Guna.UI2.WinForms.Guna2Button();
-            this.TENDETAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CHUYENNGANH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KHOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GVHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAMBAOVE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel10.SuspendLayout();
             this.pnlgrid.SuspendLayout();
@@ -248,6 +248,24 @@
             this.panel10.TabIndex = 1;
             this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
+            // btnInBC
+            // 
+            this.btnInBC.BorderRadius = 5;
+            this.btnInBC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnInBC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnInBC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnInBC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnInBC.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnInBC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnInBC.ForeColor = System.Drawing.Color.White;
+            this.btnInBC.Location = new System.Drawing.Point(18, 120);
+            this.btnInBC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnInBC.Name = "btnInBC";
+            this.btnInBC.Size = new System.Drawing.Size(239, 44);
+            this.btnInBC.TabIndex = 59;
+            this.btnInBC.Text = "In báo cáo";
+            this.btnInBC.Click += new System.EventHandler(this.btnInBC_Click);
+            // 
             // comGT
             // 
             this.comGT.FormattingEnabled = true;
@@ -352,14 +370,14 @@
             // 
             this.grdBaocao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdBaocao.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdBaocao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdBaocao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdBaocao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdBaocao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TENDETAI,
@@ -368,31 +386,79 @@
             this.KHOA,
             this.GVHD,
             this.NAMBAOVE});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdBaocao.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdBaocao.DefaultCellStyle = dataGridViewCellStyle2;
             this.grdBaocao.Location = new System.Drawing.Point(24, 41);
             this.grdBaocao.Name = "grdBaocao";
             this.grdBaocao.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdBaocao.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdBaocao.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdBaocao.RowHeadersWidth = 82;
             this.grdBaocao.RowTemplate.Height = 33;
             this.grdBaocao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdBaocao.Size = new System.Drawing.Size(1712, 1003);
             this.grdBaocao.TabIndex = 0;
             this.grdBaocao.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdBaocao_CellContentClick);
+            // 
+            // TENDETAI
+            // 
+            this.TENDETAI.DataPropertyName = "TENDETAI";
+            this.TENDETAI.HeaderText = "Tên đề tài";
+            this.TENDETAI.MinimumWidth = 10;
+            this.TENDETAI.Name = "TENDETAI";
+            this.TENDETAI.ReadOnly = true;
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN";
+            this.HOTEN.HeaderText = "Tên sinh viên";
+            this.HOTEN.MinimumWidth = 10;
+            this.HOTEN.Name = "HOTEN";
+            this.HOTEN.ReadOnly = true;
+            // 
+            // CHUYENNGANH
+            // 
+            this.CHUYENNGANH.DataPropertyName = "CHUYENNGANH";
+            this.CHUYENNGANH.HeaderText = "Chuyên ngành";
+            this.CHUYENNGANH.MinimumWidth = 10;
+            this.CHUYENNGANH.Name = "CHUYENNGANH";
+            this.CHUYENNGANH.ReadOnly = true;
+            // 
+            // KHOA
+            // 
+            this.KHOA.DataPropertyName = "KHOA";
+            this.KHOA.HeaderText = "Khóa";
+            this.KHOA.MinimumWidth = 10;
+            this.KHOA.Name = "KHOA";
+            this.KHOA.ReadOnly = true;
+            // 
+            // GVHD
+            // 
+            this.GVHD.DataPropertyName = "GVHD";
+            this.GVHD.HeaderText = "Giảng viên hướng dẫn";
+            this.GVHD.MinimumWidth = 10;
+            this.GVHD.Name = "GVHD";
+            this.GVHD.ReadOnly = true;
+            // 
+            // NAMBAOVE
+            // 
+            this.NAMBAOVE.DataPropertyName = "NĂM";
+            this.NAMBAOVE.HeaderText = "Năm bảo vệ";
+            this.NAMBAOVE.MinimumWidth = 10;
+            this.NAMBAOVE.Name = "NAMBAOVE";
+            this.NAMBAOVE.ReadOnly = true;
             // 
             // DSDAdrop
             // 
@@ -480,6 +546,7 @@
             this.button13.Text = "Trợ giúp";
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // panel2
             // 
@@ -788,72 +855,6 @@
             this.pictureBox11.Size = new System.Drawing.Size(44, 31);
             this.pictureBox11.TabIndex = 3;
             this.pictureBox11.TabStop = false;
-            // 
-            // btnInBC
-            // 
-            this.btnInBC.BorderRadius = 5;
-            this.btnInBC.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnInBC.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnInBC.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnInBC.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnInBC.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnInBC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnInBC.ForeColor = System.Drawing.Color.White;
-            this.btnInBC.Location = new System.Drawing.Point(18, 120);
-            this.btnInBC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnInBC.Name = "btnInBC";
-            this.btnInBC.Size = new System.Drawing.Size(239, 44);
-            this.btnInBC.TabIndex = 59;
-            this.btnInBC.Text = "In báo cáo";
-            this.btnInBC.Click += new System.EventHandler(this.btnInBC_Click);
-            // 
-            // TENDETAI
-            // 
-            this.TENDETAI.DataPropertyName = "TENDETAI";
-            this.TENDETAI.HeaderText = "Tên đề tài";
-            this.TENDETAI.MinimumWidth = 10;
-            this.TENDETAI.Name = "TENDETAI";
-            this.TENDETAI.ReadOnly = true;
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN";
-            this.HOTEN.HeaderText = "Tên sinh viên";
-            this.HOTEN.MinimumWidth = 10;
-            this.HOTEN.Name = "HOTEN";
-            this.HOTEN.ReadOnly = true;
-            // 
-            // CHUYENNGANH
-            // 
-            this.CHUYENNGANH.DataPropertyName = "CHUYENNGANH";
-            this.CHUYENNGANH.HeaderText = "Chuyên ngành";
-            this.CHUYENNGANH.MinimumWidth = 10;
-            this.CHUYENNGANH.Name = "CHUYENNGANH";
-            this.CHUYENNGANH.ReadOnly = true;
-            // 
-            // KHOA
-            // 
-            this.KHOA.DataPropertyName = "KHOA";
-            this.KHOA.HeaderText = "Khóa";
-            this.KHOA.MinimumWidth = 10;
-            this.KHOA.Name = "KHOA";
-            this.KHOA.ReadOnly = true;
-            // 
-            // GVHD
-            // 
-            this.GVHD.DataPropertyName = "GVHD";
-            this.GVHD.HeaderText = "Giảng viên hướng dẫn";
-            this.GVHD.MinimumWidth = 10;
-            this.GVHD.Name = "GVHD";
-            this.GVHD.ReadOnly = true;
-            // 
-            // NAMBAOVE
-            // 
-            this.NAMBAOVE.DataPropertyName = "NĂM";
-            this.NAMBAOVE.HeaderText = "Năm bảo vệ";
-            this.NAMBAOVE.MinimumWidth = 10;
-            this.NAMBAOVE.Name = "NAMBAOVE";
-            this.NAMBAOVE.ReadOnly = true;
             // 
             // frmBaocao
             // 

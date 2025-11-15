@@ -16,7 +16,7 @@ namespace formQLmain
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmQLmain());
+            Application.Run(new frmBaocao());
         }
     }
 }
