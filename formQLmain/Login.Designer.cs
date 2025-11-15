@@ -43,6 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnHien = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -96,6 +98,8 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.guna2Panel1.BorderRadius = 20;
+            this.guna2Panel1.Controls.Add(this.btnAn);
+            this.guna2Panel1.Controls.Add(this.btnHien);
             this.guna2Panel1.Controls.Add(this.button1);
             this.guna2Panel1.Controls.Add(this.txtEmail);
             this.guna2Panel1.Controls.Add(this.btnLogin);
@@ -119,7 +123,7 @@
             this.button1.Location = new System.Drawing.Point(772, 1416);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 54);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 13;
             this.button1.Text = "Quay về";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -142,7 +146,7 @@
             this.txtEmail.PlaceholderText = "Nhập email của bạn";
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(678, 129);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.TabIndex = 10;
             // 
             // btnLogin
             // 
@@ -156,7 +160,7 @@
             this.btnLogin.Location = new System.Drawing.Point(111, 1193);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(678, 130);
-            this.btnLogin.TabIndex = 11;
+            this.btnLogin.TabIndex = 12;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -178,7 +182,7 @@
             this.txtPassword.PlaceholderText = "Nhập mật khẩu của bạn";
             this.txtPassword.SelectedText = "";
             this.txtPassword.Size = new System.Drawing.Size(678, 129);
-            this.txtPassword.TabIndex = 10;
+            this.txtPassword.TabIndex = 11;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label7
@@ -237,6 +241,40 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
+            // btnAn
+            // 
+            this.btnAn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAn.HoverState.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnAn.Image = ((System.Drawing.Image)(resources.GetObject("btnAn.Image")));
+            this.btnAn.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAn.ImageRotate = 0F;
+            this.btnAn.ImageSize = new System.Drawing.Size(14, 14);
+            this.btnAn.Location = new System.Drawing.Point(725, 1023);
+            this.btnAn.Name = "btnAn";
+            this.btnAn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAn.Size = new System.Drawing.Size(32, 32);
+            this.btnAn.TabIndex = 14;
+            this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
+            // 
+            // btnHien
+            // 
+            this.btnHien.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHien.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnHien.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnHien.HoverState.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnHien.Image = ((System.Drawing.Image)(resources.GetObject("btnHien.Image")));
+            this.btnHien.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnHien.ImageRotate = 0F;
+            this.btnHien.ImageSize = new System.Drawing.Size(14, 14);
+            this.btnHien.Location = new System.Drawing.Point(725, 1023);
+            this.btnHien.Name = "btnHien";
+            this.btnHien.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnHien.Size = new System.Drawing.Size(32, 32);
+            this.btnHien.TabIndex = 15;
+            this.btnHien.Click += new System.EventHandler(this.btnHien_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -279,5 +317,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2ImageButton btnAn;
+        private Guna.UI2.WinForms.Guna2ImageButton btnHien;
     }
 }
