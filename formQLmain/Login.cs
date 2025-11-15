@@ -14,11 +14,25 @@ namespace formQLmain
     public partial class FrmLogin : Form
     {
         string loginMode; // Biến lưu kiểu đăng nhập (USER hoặc ADMIN)
+        bool isPasswordVisible = false;
+
 
         public FrmLogin(string mode)
         {
             InitializeComponent();
             loginMode = mode;
+        }
+        private void TogglePassword()
+        {
+            // Đảo trạng thái
+            isPasswordVisible = !isPasswordVisible;
+
+            // Áp dụng trạng thái
+            txtPassword.UseSystemPasswordChar = !isPasswordVisible;
+
+            // Đổi nút
+            btnHien.Visible = isPasswordVisible;  // nút "Hiện"
+            btnAn.Visible = !isPasswordVisible;  // nút "Ẩn"
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -116,6 +130,22 @@ namespace formQLmain
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void btnAn_Click(object sender, EventArgs e)
+        {
+            
+            TogglePassword();
+
+        }
+
+        private void btnHien_Click(object sender, EventArgs e)
+        {
+
+            
+
+            TogglePassword();
 
         }
     }
