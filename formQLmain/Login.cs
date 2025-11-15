@@ -148,5 +148,18 @@ namespace formQLmain
             TogglePassword();
 
         }
+
+        private void FrmLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            //Nếu được bấm trên bàn phím là Enter thì chuyển sang điều khiển tiếp theo, gửi vào bộ xử lí là phím tab
+            if (e.KeyChar == (char)Keys.Enter) //nếu nút được bấm là Enter
+            {
+                SendKeys.Send("{TAB}");
+                e.Handled = true;
+            }
+
+
+            }
     }
 }
