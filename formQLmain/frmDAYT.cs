@@ -20,7 +20,7 @@ namespace formQLmain
         SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         string sql, constr;
-
+        public bool Expandmenu = false; // khai báo biến Expand2 
         public frmDAYT()
                
 
@@ -73,15 +73,12 @@ namespace formQLmain
         
         private void button1_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void btnDrop2_Click(object sender, EventArgs e)
-        {
-            frmTracuu f = new frmTracuu();
+            frmUser f = new frmUser();
             f.Show();
             this.Hide();
         }
+
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -210,6 +207,87 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmTracuu f = new frmTracuu();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void menutimer_Tick(object sender, EventArgs e)
+        {
+            // trượt dọc đã làm được 
+            if (Expandmenu == false)
+            {
+                panelMenu.Width += 25;
+                if (panelMenu.Width >= panelMenu.MaximumSize.Width)
+                {
+
+                    menutimer.Stop();
+                    Expandmenu = true;
+                    pictureBox12.Visible = true;
+                    panelALL.Left = 245;
+                }
+            }
+            else
+            {
+                panelMenu.Width -= 25;
+                if (panelMenu.Width <= panelMenu.MinimumSize.Width)
+                {
+                    menutimer.Stop();
+                    Expandmenu = false;
+                    pictureBox12.Visible = false;
+                    panelALL.Left = 73;
+                }
+
+            }
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
         }
 
         private void frmDAYT_Load(object sender, EventArgs e)

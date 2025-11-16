@@ -236,28 +236,22 @@ namespace formQLmain
         }
         // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string kw = textbox_TimKiem.Text.Trim();
+        //private void btnTimKiem_Click(object sender, EventArgs e)
+        //{
+        //    string kw = textbox_TimKiem.Text.Trim();
 
-            if (string.IsNullOrEmpty(kw))
-            {
-                // Không nhập gì → hiện tất cả
-                grdSinhVien.DataSource = modify.getAllSinhVien();
-                return;
-            }
+        //    if (string.IsNullOrEmpty(kw))
+        //    {
+        //        // Không nhập gì → hiện tất cả
+        //        grdSinhVien.DataSource = modify.getAllSinhVien();
+        //        return;
+        //    }
+        //}
 
-            grdSinhVien.DataSource = modify.searchSinhVien(kw);
-        }
-
-        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true; // khỏi kêu 'ding'
-                btnTimKiem_Click(sender, e);
-            }
-        }
+        //private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        //{
+            
+        //}
 
       
 
@@ -558,6 +552,28 @@ namespace formQLmain
             btnCapNhat.Visible = false; // hiện nút Lưu lên 
             label_CapNhat.Visible = false;
             btn_Thoat2.Visible = false;
+        }
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        {
+            string kw = textbox_TimKiem.Text.Trim();
+
+            if (string.IsNullOrEmpty(kw))
+            {
+                // Không nhập gì → hiện tất cả
+                grdSinhVien.DataSource = modify.getAllSinhVien();
+                return;
+            }
+        }
+
+        private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void textbox_TimKiem2_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
 
         //private void comboBox_ChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)

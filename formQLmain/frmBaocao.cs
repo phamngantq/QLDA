@@ -117,12 +117,12 @@ JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
 
         private void btnInBC_Click(object sender, EventArgs e)
         {
-            //  PHÂN QUYỀN: Kiểm tra nếu là GIANGVIEN
-            //if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
-            //{
-            //    MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return; // Ngừng thực thi và không tiến hành in
-            //}
+            //PHÂN QUYỀN: Kiểm tra nếu là GIANGVIEN
+            if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngừng thực thi và không tiến hành in
+            }
 
             rptDoann rpt = new rptDoann();
             sql = "SELECT DA.TENDETAI, SV.HOTEN, SV.CHUYENNGANH, SV.KHOA, GVHD.GVHD, YEAR(DA.NAMBAOVE) AS N'NĂM' FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN JOIN GVHD ON GVHD.MAGVHD = DA.MAGVHD" +

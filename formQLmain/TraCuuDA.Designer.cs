@@ -30,40 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTracuu));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panelMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.dropdown2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnDA = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.btnTracuu = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.btnDAYT = new System.Windows.Forms.Button();
-            this.trogiup = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnLove = new System.Windows.Forms.Button();
             this.comGT = new System.Windows.Forms.ComboBox();
             this.btnEnd = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
@@ -102,8 +79,6 @@
             this.GVHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAMBAOVE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOMTAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DSDAdrop = new System.Windows.Forms.Timer(this.components);
-            this.TroGiupdrop = new System.Windows.Forms.Timer(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.txtTukhoa = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -113,447 +88,156 @@
             this.toolTipMyfavorite = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipRefresh = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipResearch = new System.Windows.Forms.ToolTip(this.components);
-            this.flowLayoutPanel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panelMenu.SuspendLayout();
-            this.dropdown2.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.panelALL = new System.Windows.Forms.Panel();
+            this.panelMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.menutimer = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.trogiup.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel10.SuspendLayout();
             this.pnlgrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdTracuu)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panelALL.SuspendLayout();
+            this.panelMenu.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.flowLayoutPanel11.SuspendLayout();
+            this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // flowLayoutPanel3
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DimGray;
-            this.button1.Location = new System.Drawing.Point(-9, -12);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(440, 125);
-            this.button1.TabIndex = 0;
-            this.button1.Text = " Trang chủ";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.flowLayoutPanel3.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel3.Controls.Add(this.panel5);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(16, 249);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel3.MaximumSize = new System.Drawing.Size(418, 391);
+            this.flowLayoutPanel3.MinimumSize = new System.Drawing.Size(418, 88);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(418, 105);
+            this.flowLayoutPanel3.TabIndex = 6;
             // 
-            // flowLayoutPanel2
+            // panel5
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel2.Controls.Add(this.panel4);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(36, 106);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(418, 391);
-            this.flowLayoutPanel2.MinimumSize = new System.Drawing.Size(418, 88);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(418, 105);
-            this.flowLayoutPanel2.TabIndex = 3;
-            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(418, 112);
-            this.panel4.TabIndex = 1;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.BackgroundImage = global::formQLmain.Properties.Resources.home_dark;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(26, 27);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(44, 31);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.White;
-            this.panelMenu.Controls.Add(this.flowLayoutPanel2);
-            this.panelMenu.Controls.Add(this.dropdown2);
-            this.panelMenu.Controls.Add(this.trogiup);
-            this.panelMenu.Controls.Add(this.flowLayoutPanel1);
-            this.panelMenu.Controls.Add(this.panel11);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Padding = new System.Windows.Forms.Padding(30, 100, 0, 0);
-            this.panelMenu.Size = new System.Drawing.Size(483, 1512);
-            this.panelMenu.TabIndex = 45;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
-            // 
-            // dropdown2
-            // 
-            this.dropdown2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dropdown2.Controls.Add(this.panel6);
-            this.dropdown2.Controls.Add(this.panel7);
-            this.dropdown2.Controls.Add(this.panel8);
-            this.dropdown2.Location = new System.Drawing.Point(36, 223);
-            this.dropdown2.Margin = new System.Windows.Forms.Padding(6);
-            this.dropdown2.MaximumSize = new System.Drawing.Size(418, 330);
-            this.dropdown2.MinimumSize = new System.Drawing.Size(418, 88);
-            this.dropdown2.Name = "dropdown2";
-            this.dropdown2.Size = new System.Drawing.Size(418, 104);
-            this.dropdown2.TabIndex = 2;
-            this.dropdown2.Paint += new System.Windows.Forms.PaintEventHandler(this.dropdown2_Paint);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.btnDA);
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(435, 111);
-            this.panel6.TabIndex = 1;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            this.panel5.Controls.Add(this.pictureBox3);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(418, 112);
+            this.panel5.TabIndex = 1;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::formQLmain.Properties.Resources.qlda_dark;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(26, 38);
+            this.pictureBox3.Location = new System.Drawing.Point(26, 26);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(44, 31);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click_1);
             // 
-            // btnDA
+            // button2
             // 
-            this.btnDA.BackColor = System.Drawing.Color.White;
-            this.btnDA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDA.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDA.ForeColor = System.Drawing.Color.DimGray;
-            this.btnDA.Location = new System.Drawing.Point(-8, -12);
-            this.btnDA.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDA.Name = "btnDA";
-            this.btnDA.Size = new System.Drawing.Size(430, 131);
-            this.btnDA.TabIndex = 0;
-            this.btnDA.Text = "            Danh sách đồ án";
-            this.btnDA.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDA.UseVisualStyleBackColor = false;
-            this.btnDA.Click += new System.EventHandler(this.btnDrop2_Click);
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DimGray;
+            this.button2.Location = new System.Drawing.Point(-9, -39);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(491, 152);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "   Tra cứu đồ án ";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panel7
+            // flowLayoutPanel4
             // 
-            this.panel7.Controls.Add(this.pictureBox7);
-            this.panel7.Controls.Add(this.btnTracuu);
-            this.panel7.Location = new System.Drawing.Point(0, 111);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(418, 109);
-            this.panel7.TabIndex = 2;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel4.Controls.Add(this.panel6);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(16, 366);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel4.MaximumSize = new System.Drawing.Size(418, 391);
+            this.flowLayoutPanel4.MinimumSize = new System.Drawing.Size(418, 88);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(418, 105);
+            this.flowLayoutPanel4.TabIndex = 7;
             // 
-            // pictureBox7
+            // panel6
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox7.BackgroundImage = global::formQLmain.Properties.Resources.icons8_dropdown_16__1_1;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.Location = new System.Drawing.Point(70, 52);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(18, 17);
-            this.pictureBox7.TabIndex = 3;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Controls.Add(this.btnLove);
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(418, 112);
+            this.panel6.TabIndex = 1;
             // 
-            // btnTracuu
+            // pictureBox2
             // 
-            this.btnTracuu.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTracuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTracuu.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTracuu.ForeColor = System.Drawing.Color.DimGray;
-            this.btnTracuu.Location = new System.Drawing.Point(-8, -14);
-            this.btnTracuu.Margin = new System.Windows.Forms.Padding(6);
-            this.btnTracuu.Name = "btnTracuu";
-            this.btnTracuu.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.btnTracuu.Size = new System.Drawing.Size(442, 134);
-            this.btnTracuu.TabIndex = 0;
-            this.btnTracuu.Text = "      Tra cứu đồ án";
-            this.btnTracuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTracuu.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnTracuu.UseVisualStyleBackColor = false;
-            this.btnTracuu.Click += new System.EventHandler(this.btnDSDA_Click);
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::formQLmain.Properties.Resources.qlda_dark;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(26, 29);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 31);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // panel8
+            // btnLove
             // 
-            this.panel8.Controls.Add(this.pictureBox8);
-            this.panel8.Controls.Add(this.btnDAYT);
-            this.panel8.Location = new System.Drawing.Point(0, 220);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(418, 111);
-            this.panel8.TabIndex = 3;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox8.BackgroundImage = global::formQLmain.Properties.Resources.icons8_dropdown_16__1_1;
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox8.Location = new System.Drawing.Point(70, 45);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(18, 17);
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
-            // btnDAYT
-            // 
-            this.btnDAYT.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDAYT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDAYT.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDAYT.ForeColor = System.Drawing.Color.DimGray;
-            this.btnDAYT.Location = new System.Drawing.Point(-8, -3);
-            this.btnDAYT.Margin = new System.Windows.Forms.Padding(6);
-            this.btnDAYT.Name = "btnDAYT";
-            this.btnDAYT.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.btnDAYT.Size = new System.Drawing.Size(442, 120);
-            this.btnDAYT.TabIndex = 0;
-            this.btnDAYT.Text = "      Đồ án yêu thích";
-            this.btnDAYT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDAYT.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnDAYT.UseVisualStyleBackColor = false;
-            this.btnDAYT.Click += new System.EventHandler(this.btnTLKT_Click);
-            // 
-            // trogiup
-            // 
-            this.trogiup.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.trogiup.Controls.Add(this.panel1);
-            this.trogiup.Controls.Add(this.panel2);
-            this.trogiup.Controls.Add(this.panel3);
-            this.trogiup.Location = new System.Drawing.Point(36, 339);
-            this.trogiup.Margin = new System.Windows.Forms.Padding(6);
-            this.trogiup.MaximumSize = new System.Drawing.Size(418, 330);
-            this.trogiup.MinimumSize = new System.Drawing.Size(418, 88);
-            this.trogiup.Name = "trogiup";
-            this.trogiup.Size = new System.Drawing.Size(418, 104);
-            this.trogiup.TabIndex = 48;
-            this.trogiup.Paint += new System.Windows.Forms.PaintEventHandler(this.trogiup_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox10);
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(435, 111);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.White;
-            this.pictureBox10.BackgroundImage = global::formQLmain.Properties.Resources.help_dark;
-            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox10.Location = new System.Drawing.Point(26, 46);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(44, 31);
-            this.pictureBox10.TabIndex = 3;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.White;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.ForeColor = System.Drawing.Color.DimGray;
-            this.button13.Location = new System.Drawing.Point(-15, -18);
-            this.button13.Margin = new System.Windows.Forms.Padding(6);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(456, 141);
-            this.button13.TabIndex = 0;
-            this.button13.Text = "Trợ giúp";
-            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Location = new System.Drawing.Point(0, 111);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 109);
-            this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox5.BackgroundImage = global::formQLmain.Properties.Resources.icons8_dropdown_16__1_1;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(70, 52);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(18, 17);
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.button3.ForeColor = System.Drawing.Color.DimGray;
-            this.button3.Location = new System.Drawing.Point(-8, -14);
-            this.button3.Margin = new System.Windows.Forms.Padding(6);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(442, 134);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "      Giới thiệu phần mềm";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pictureBox6);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Location = new System.Drawing.Point(0, 220);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(418, 111);
-            this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox6.BackgroundImage = global::formQLmain.Properties.Resources.icons8_dropdown_16__1_1;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(70, 45);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(18, 17);
-            this.pictureBox6.TabIndex = 3;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.button4.ForeColor = System.Drawing.Color.DimGray;
-            this.button4.Location = new System.Drawing.Point(-8, -3);
-            this.button4.Margin = new System.Windows.Forms.Padding(6);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(442, 120);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "      Hướng dẫn sử dụng";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.panel9);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(36, 455);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(418, 391);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(418, 88);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(418, 105);
-            this.flowLayoutPanel1.TabIndex = 15;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.pictureBox11);
-            this.panel9.Controls.Add(this.btnLogout);
-            this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(418, 105);
-            this.panel9.TabIndex = 1;
-            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.White;
-            this.pictureBox11.BackgroundImage = global::formQLmain.Properties.Resources.logout_dark;
-            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox11.Location = new System.Drawing.Point(26, 41);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(44, 31);
-            this.pictureBox11.TabIndex = 3;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.White;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.DimGray;
-            this.btnLogout.Location = new System.Drawing.Point(-10, -2);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(6);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(441, 112);
-            this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "  Đăng xuất";
-            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.pictureBox12);
-            this.panel11.Location = new System.Drawing.Point(33, 569);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(428, 730);
-            this.panel11.TabIndex = 16;
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::formQLmain.Properties.Resources.hinhanhdep;
-            this.pictureBox12.Location = new System.Drawing.Point(28, 381);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(354, 312);
-            this.pictureBox12.TabIndex = 1;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            this.btnLove.BackColor = System.Drawing.Color.White;
+            this.btnLove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLove.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLove.ForeColor = System.Drawing.Color.DimGray;
+            this.btnLove.Location = new System.Drawing.Point(-9, -39);
+            this.btnLove.Margin = new System.Windows.Forms.Padding(6);
+            this.btnLove.Name = "btnLove";
+            this.btnLove.Size = new System.Drawing.Size(522, 173);
+            this.btnLove.TabIndex = 0;
+            this.btnLove.Text = "   Đồ án yêu thích ";
+            this.btnLove.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLove.UseVisualStyleBackColor = false;
+            this.btnLove.Click += new System.EventHandler(this.btnLove_Click);
             // 
             // comGT
             // 
@@ -960,9 +644,9 @@
             this.pnlgrid.Controls.Add(this.frmEnd);
             this.pnlgrid.Controls.Add(this.panel10);
             this.pnlgrid.Controls.Add(this.grdTracuu);
-            this.pnlgrid.Location = new System.Drawing.Point(513, 359);
+            this.pnlgrid.Location = new System.Drawing.Point(64, 356);
             this.pnlgrid.Name = "pnlgrid";
-            this.pnlgrid.Size = new System.Drawing.Size(2397, 1261);
+            this.pnlgrid.Size = new System.Drawing.Size(2231, 1261);
             this.pnlgrid.TabIndex = 46;
             this.pnlgrid.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlgrid_Paint);
             // 
@@ -970,14 +654,14 @@
             // 
             this.grdTracuu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdTracuu.BackgroundColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTracuu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdTracuu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.grdTracuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTracuu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TENDETAI,
@@ -987,25 +671,25 @@
             this.GVHD,
             this.NAMBAOVE,
             this.TOMTAT});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdTracuu.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdTracuu.DefaultCellStyle = dataGridViewCellStyle35;
             this.grdTracuu.Location = new System.Drawing.Point(24, 41);
             this.grdTracuu.Name = "grdTracuu";
             this.grdTracuu.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTracuu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Segoe UI", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdTracuu.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.grdTracuu.RowHeadersWidth = 82;
             this.grdTracuu.RowTemplate.Height = 33;
             this.grdTracuu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1069,16 +753,6 @@
             this.TOMTAT.Name = "TOMTAT";
             this.TOMTAT.ReadOnly = true;
             // 
-            // DSDAdrop
-            // 
-            this.DSDAdrop.Interval = 1;
-            this.DSDAdrop.Tick += new System.EventHandler(this.DSDAdrop_Tick);
-            // 
-            // TroGiupdrop
-            // 
-            this.TroGiupdrop.Interval = 1;
-            this.TroGiupdrop.Tick += new System.EventHandler(this.TroGiupdrop_Tick);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -1108,9 +782,9 @@
             this.groupBox1.Controls.Add(this.txtTukhoa);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Location = new System.Drawing.Point(687, 16);
+            this.groupBox1.Location = new System.Drawing.Point(64, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(3000, 312);
+            this.groupBox1.Size = new System.Drawing.Size(3008, 312);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -1166,14 +840,259 @@
             // 
             this.toolTipResearch.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipResearch_Popup);
             // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel6.Controls.Add(this.panel15);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(16, 483);
+            this.flowLayoutPanel6.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel6.MaximumSize = new System.Drawing.Size(418, 391);
+            this.flowLayoutPanel6.MinimumSize = new System.Drawing.Size(418, 88);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(418, 105);
+            this.flowLayoutPanel6.TabIndex = 17;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.pictureBox10);
+            this.panel15.Controls.Add(this.button13);
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Margin = new System.Windows.Forms.Padding(0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(418, 105);
+            this.panel15.TabIndex = 1;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.White;
+            this.pictureBox10.BackgroundImage = global::formQLmain.Properties.Resources.help_dark;
+            this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox10.Location = new System.Drawing.Point(26, 41);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(44, 31);
+            this.pictureBox10.TabIndex = 3;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click_1);
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.White;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.Color.DimGray;
+            this.button13.Location = new System.Drawing.Point(-10, -2);
+            this.button13.Margin = new System.Windows.Forms.Padding(6);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(441, 112);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "Trợ giúp";
+            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button13.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox12);
+            this.panel1.Location = new System.Drawing.Point(13, 597);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(428, 730);
+            this.panel1.TabIndex = 19;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::formQLmain.Properties.Resources.hinhanhdep;
+            this.pictureBox12.Location = new System.Drawing.Point(28, 381);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(354, 312);
+            this.pictureBox12.TabIndex = 1;
+            this.pictureBox12.TabStop = false;
+            // 
+            // panelALL
+            // 
+            this.panelALL.Controls.Add(this.pnlgrid);
+            this.panelALL.Controls.Add(this.groupBox1);
+            this.panelALL.Location = new System.Drawing.Point(149, 0);
+            this.panelALL.Name = "panelALL";
+            this.panelALL.Size = new System.Drawing.Size(3092, 1600);
+            this.panelALL.TabIndex = 48;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.White;
+            this.panelMenu.Controls.Add(this.flowLayoutPanel1);
+            this.panelMenu.Controls.Add(this.flowLayoutPanel7);
+            this.panelMenu.Controls.Add(this.flowLayoutPanel3);
+            this.panelMenu.Controls.Add(this.flowLayoutPanel4);
+            this.panelMenu.Controls.Add(this.flowLayoutPanel6);
+            this.panelMenu.Controls.Add(this.panel1);
+            this.panelMenu.Controls.Add(this.flowLayoutPanel11);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.MaximumSize = new System.Drawing.Size(477, 1600);
+            this.panelMenu.MinimumSize = new System.Drawing.Size(121, 1600);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
+            this.panelMenu.Size = new System.Drawing.Size(121, 1600);
+            this.panelMenu.TabIndex = 49;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Controls.Add(this.panel3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 16);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(418, 390);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(418, 88);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(418, 104);
+            this.flowLayoutPanel1.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox7);
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(418, 113);
+            this.panel3.TabIndex = 1;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.White;
+            this.pictureBox7.BackgroundImage = global::formQLmain.Properties.Resources.menudark;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Location = new System.Drawing.Point(25, 22);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(44, 41);
+            this.pictureBox7.TabIndex = 2;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.DimGray;
+            this.button5.Location = new System.Drawing.Point(-72, -29);
+            this.button5.Margin = new System.Windows.Forms.Padding(6);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(503, 142);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "  ";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel7.Controls.Add(this.panel7);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(16, 132);
+            this.flowLayoutPanel7.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel7.MaximumSize = new System.Drawing.Size(418, 391);
+            this.flowLayoutPanel7.MinimumSize = new System.Drawing.Size(418, 88);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(418, 105);
+            this.flowLayoutPanel7.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.pictureBox8);
+            this.panel7.Controls.Add(this.button4);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(418, 112);
+            this.panel7.TabIndex = 1;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.White;
+            this.pictureBox8.BackgroundImage = global::formQLmain.Properties.Resources.home_dark;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox8.Location = new System.Drawing.Point(26, 27);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(44, 31);
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.DimGray;
+            this.button4.Location = new System.Drawing.Point(-9, -12);
+            this.button4.Margin = new System.Windows.Forms.Padding(6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(440, 125);
+            this.button4.TabIndex = 0;
+            this.button4.Text = " Trang chủ";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_2);
+            // 
+            // flowLayoutPanel11
+            // 
+            this.flowLayoutPanel11.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel11.Controls.Add(this.panel13);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(16, 1336);
+            this.flowLayoutPanel11.Margin = new System.Windows.Forms.Padding(6);
+            this.flowLayoutPanel11.MaximumSize = new System.Drawing.Size(418, 391);
+            this.flowLayoutPanel11.MinimumSize = new System.Drawing.Size(418, 88);
+            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(418, 105);
+            this.flowLayoutPanel11.TabIndex = 18;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.pictureBox15);
+            this.panel13.Controls.Add(this.button9);
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Margin = new System.Windows.Forms.Padding(0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(418, 105);
+            this.panel13.TabIndex = 1;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackColor = System.Drawing.Color.White;
+            this.pictureBox15.BackgroundImage = global::formQLmain.Properties.Resources.logout_dark;
+            this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox15.Location = new System.Drawing.Point(26, 41);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(44, 31);
+            this.pictureBox15.TabIndex = 3;
+            this.pictureBox15.TabStop = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.DimGray;
+            this.button9.Location = new System.Drawing.Point(-10, -2);
+            this.button9.Margin = new System.Windows.Forms.Padding(6);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(441, 112);
+            this.button9.TabIndex = 0;
+            this.button9.Text = "Đăng xuất";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // menutimer
+            // 
+            this.menutimer.Interval = 1;
+            this.menutimer.Tick += new System.EventHandler(this.menutimer_Tick);
+            // 
             // frmTracuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2884, 1512);
-            this.Controls.Add(this.pnlgrid);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.panelALL);
             this.KeyPreview = true;
             this.Name = "frmTracuu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1181,29 +1100,12 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTracuu_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmTracuu_KeyDown);
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panelMenu.ResumeLayout(false);
-            this.dropdown2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            this.trogiup.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.pnlgrid.ResumeLayout(false);
@@ -1212,34 +1114,27 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panelALL.ResumeLayout(false);
+            this.panelMenu.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.flowLayoutPanel11.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.FlowLayoutPanel panelMenu;
-        private System.Windows.Forms.FlowLayoutPanel dropdown2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button btnDA;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Button btnTracuu;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button btnDAYT;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.ComboBox comGT;
         private Guna.UI2.WinForms.Guna2Button btnEnd;
         private Guna.UI2.WinForms.Guna2Button btnNext;
@@ -1263,8 +1158,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnlgrid;
-        private System.Windows.Forms.Timer DSDAdrop;
-        private System.Windows.Forms.Timer TroGiupdrop;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtTukhoa;
@@ -1287,15 +1180,36 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TOMTAT;
         private Guna.UI2.WinForms.Guna2ImageButton btnMyfavorite;
         private System.Windows.Forms.ToolTip toolTipMyfavorite;
-        private System.Windows.Forms.FlowLayoutPanel trogiup;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ToolTip toolTipRefresh;
         private System.Windows.Forms.ToolTip toolTipResearch;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnLove;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Panel panelALL;
+        private System.Windows.Forms.FlowLayoutPanel panelMenu;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Timer menutimer;
     }
 }

@@ -37,6 +37,17 @@ namespace formQLmain
                 return count > 0;
             }
         }
+        // ==============hàm check mã GVHD đã tồn tại chưa =============
+        private bool CheckMaGV(string gvhd, SqlConnection conn)
+        {
+            string sql = "SELECT COUNT(*) FROM GVHD WHERE MAGVHD = @gvhd";
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@gvhd", gvhd);
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
 
         // ============hàm insert =====================
         public bool insert(DanhSachDoAn da, out string error)
@@ -55,6 +66,13 @@ namespace formQLmain
                     return false;
                 }
 
+                // gọi hàm check mã gvhd
+                // == gọi quả hàm check mã vào đây 
+                if (!CheckMaGV(da.GVHD, conn))
+                {
+                    error = "Mã giảng viên này không tồn tại.";
+                    return false;
+                }
                 // ------------------------------------------------------
                 SqlTransaction tran = conn.BeginTransaction();
 
