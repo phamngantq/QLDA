@@ -17,8 +17,8 @@ namespace formQLmain
         public DataTable getAllDoAn()
         {
             DataTable dt = new DataTable();
-            string sql = @"SELECT DA.MADOAN,DA.TENDETAI,DA.MASINHVIEN, DA.GVHD, DA.NAMBAOVE, DA.TOMTAT,DA.MATAILIEUBC,TLBC.MATAILIEUBC,TLBC.FILEBC, TLBC.SLIDE,TLBC.LY_LICH,TK.MATUKHOA,TK.TUKHOA FROM DOAN DA 
-                   JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON TKDA.MADOAN=DA.MADOAN JOIN TUKHOA TK ON TK.MATUKHOA=TKDA.MATUKHOA  ;";
+            string sql = @"SELECT DA.MADOAN,DA.TENDETAI,DA.MASINHVIEN, GVHD.MAGVHD, DA.NAMBAOVE, DA.TOMTAT,DA.MATAILIEUBC,TLBC.MATAILIEUBC,TLBC.FILEBC, TLBC.SLIDE,TLBC.LY_LICH,TK.MATUKHOA,TK.TUKHOA FROM DOAN DA 
+                   JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON TKDA.MADOAN=DA.MADOAN JOIN TUKHOA TK ON TK.MATUKHOA=TKDA.MATUKHOA JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD  ;";
             using (SqlConnection conn = Connection.getConnection())
             {
                 _da = new SqlDataAdapter(sql, conn);
@@ -101,7 +101,7 @@ namespace formQLmain
                 // 3. Insert DOAN
                 // -------------------------------
                 string sqlDA = @"
-            INSERT INTO DOAN (TENDETAI, MASINHVIEN, GVHD, NAMBAOVE, TOMTAT, MATAILIEUBC)
+            INSERT INTO DOAN (TENDETAI, MASINHVIEN, MAGVHD, NAMBAOVE, TOMTAT, MATAILIEUBC)
             VALUES (@ten, @maSV, @gvhd, @namBV, @tomtat, @maTLBC);
 
             SELECT TOP 1 MADOAN
@@ -202,7 +202,7 @@ namespace formQLmain
             UPDATE DOAN
             SET TENDETAI = @ten,
                 MASINHVIEN = @maSV,
-                GVHD = @gvhd,
+                MAGVHD = @gvhd,
                 NAMBAOVE = @namBV,
                 TOMTAT = @tomtat,
                 MATAILIEUBC = @maTLBC
@@ -322,7 +322,7 @@ namespace formQLmain
                 WHERE MADOAN      LIKE @kw
                    OR TENDETAI    LIKE @kw
                    OR MASINHVIEN  LIKE @kw
-                   OR GVHD        LIKE @kw
+                   OR MAGVHD        LIKE @kw
                    OR TOMTAT      LIKE @kw
                    OR MATAILIEUBC LIKE @kw
                    OR CONVERT(varchar(10), NAMBAOVE, 120) LIKE @kw";
