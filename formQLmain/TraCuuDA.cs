@@ -49,6 +49,7 @@ namespace formQLmain
         }
 
 
+        
 
 
         private void TimKiemTheoTuKhoa(string keyword)
@@ -825,6 +826,37 @@ GROUP BY
         private void pictureBox13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmTracuu_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Kiểm tra xem nút nào đã được nhấn
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                    // Hành động cho nút "Trước" (Previous)
+                    btnPre_Click(null, null);
+                    e.Handled = true; // Ngăn không cho sự kiện lan truyền thêm
+                    break;
+
+                case Keys.Down:
+                    // Hành động cho nút "Sau" (Next)
+                    btnNext_Click(null, null);
+                    e.Handled = true;
+                    break;
+
+                case Keys.Home:
+                    // Tùy chọn: Dùng phím Home cho nút "Đầu"
+                    btnFirst_Click(null, null);
+                    e.Handled = true;
+                    break;
+
+                case Keys.End:
+                    // Tùy chọn: Dùng phím End cho nút "Cuối"
+                    btnEnd_Click(null, null);
+                    e.Handled = true;
+                    break;
+            }
         }
 
         private void label8_Click(object sender, EventArgs e)
