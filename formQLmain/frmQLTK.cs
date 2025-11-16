@@ -421,5 +421,38 @@ namespace formQLmain
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        {
+            string kw = textbox_TimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(kw))
+            {
+                grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
+                return;
+            }
+            grdTaiKhoan.DataSource = tkRepo.searchTaiKhoan(kw);
+        }
+
+        private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            textbox_TimKiem.Clear();
+            grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
+        }
     }
 }

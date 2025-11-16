@@ -152,7 +152,9 @@ namespace formQLmain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmQLmain f = new FrmQLmain();
+            f.Show();
+            this.Hide();
         }
 
         private void pnlgrid_Paint(object sender, PaintEventArgs e)
@@ -564,6 +566,8 @@ namespace formQLmain
                 grdSinhVien.DataSource = modify.getAllSinhVien();
                 return;
             }
+
+            grdSinhVien.DataSource = modify.searchSinhVien(kw);
         }
 
         private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
@@ -572,6 +576,32 @@ namespace formQLmain
         }
 
         private void textbox_TimKiem2_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // khỏi kêu 'ding'
+                btnTimKiem_Click_1(sender, e);
+            }
+        }
+
+        private void panelALL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
         {
 
         }

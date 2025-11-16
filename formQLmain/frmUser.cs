@@ -28,8 +28,8 @@ namespace formQLmain
 
                     menutimer.Stop();
                     Expandmenu = true;
-                    pictureBox12.Visible = true;
-                    panelALL.Left = 245;
+                   
+                    
                 }
             }
             else
@@ -39,8 +39,8 @@ namespace formQLmain
                 {
                     menutimer.Stop();
                     Expandmenu = false;
-                    pictureBox12.Visible = false;
-                    panelALL.Left = 73;
+                    
+                    
                 }
 
             }
@@ -50,7 +50,7 @@ namespace formQLmain
         {
             menutimer.Start();
             Console.WriteLine(Expandmenu);
-            pictureBox12.Visible = true;
+            
             Console.ReadLine();
         }
 
@@ -58,7 +58,7 @@ namespace formQLmain
         {
             menutimer.Start();
             Console.WriteLine(Expandmenu);
-            pictureBox12.Visible = true;
+            
             Console.ReadLine();
         }
 
@@ -66,7 +66,7 @@ namespace formQLmain
         {
             menutimer.Start();
             Console.WriteLine(Expandmenu);
-            pictureBox12.Visible = true;
+            
             Console.ReadLine();
         }
 
@@ -74,7 +74,7 @@ namespace formQLmain
         {
             menutimer.Start();
             Console.WriteLine(Expandmenu);
-            pictureBox12.Visible = true;
+           
             Console.ReadLine();
         }
 
@@ -87,7 +87,7 @@ namespace formQLmain
         {
             menutimer.Start();
             Console.WriteLine(Expandmenu);
-            pictureBox12.Visible = true;
+           
             Console.ReadLine();
         }
 
@@ -106,6 +106,20 @@ namespace formQLmain
         private void button2_Click(object sender, EventArgs e)
         {
             frmTracuu f = new frmTracuu();
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnKhamPha_Click(object sender, EventArgs e)
+        {
+            frmTracuu f = new frmTracuu();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
             f.Show();
             this.Hide();
         }

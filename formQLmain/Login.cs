@@ -94,7 +94,7 @@ namespace formQLmain
 
                 if (role == "SINHVIEN")
                 {
-                    frmTracuu f = new frmTracuu();
+                    frmUser f = new frmUser();
                     f.Show();
                 }
                 else if (role == "GIANGVIEN")

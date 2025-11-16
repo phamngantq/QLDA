@@ -83,6 +83,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panelALL = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnRefreshDash = new System.Windows.Forms.Button();
             this.grdRecent = new System.Windows.Forms.DataGridView();
@@ -102,8 +104,7 @@
             this.panel17 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalDoAn = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.flowLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -137,6 +138,8 @@
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelALL.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdRecent)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -147,7 +150,6 @@
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel2
@@ -182,6 +184,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(44, 39);
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox4, "Trang chủ");
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // button1
@@ -235,6 +238,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(44, 36);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "Quản lý dữ liệu");
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btndropQLDL
@@ -366,6 +370,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(44, 39);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Quản lý đồ án");
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btnDrop2
@@ -495,6 +500,7 @@
             this.pictureBox9.Size = new System.Drawing.Size(44, 40);
             this.pictureBox9.TabIndex = 3;
             this.pictureBox9.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox9, "Báo cáo");
             this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // button12
@@ -545,6 +551,7 @@
             this.pictureBox10.Size = new System.Drawing.Size(44, 32);
             this.pictureBox10.TabIndex = 3;
             this.pictureBox10.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox10, "Trợ giúp");
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // button13
@@ -594,7 +601,7 @@
             this.panelMenu.MinimumSize = new System.Drawing.Size(121, 1600);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Padding = new System.Windows.Forms.Padding(10, 10, 0, 0);
-            this.panelMenu.Size = new System.Drawing.Size(477, 1600);
+            this.panelMenu.Size = new System.Drawing.Size(121, 1600);
             this.panelMenu.TabIndex = 7;
             // 
             // flowLayoutPanel3
@@ -629,6 +636,7 @@
             this.pictureBox13.Size = new System.Drawing.Size(44, 41);
             this.pictureBox13.TabIndex = 2;
             this.pictureBox13.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox13, "Đóng/ Mở Menu !");
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // button5
@@ -698,6 +706,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(44, 32);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox3, "Đăng xuất");
             // 
             // button4
             // 
@@ -717,24 +726,41 @@
             // 
             // panelALL
             // 
+            this.panelALL.Controls.Add(this.panel10);
             this.panelALL.Controls.Add(this.groupBox3);
             this.panelALL.Controls.Add(this.groupBox2);
             this.panelALL.Controls.Add(this.groupBox1);
-            this.panelALL.Controls.Add(this.textBox1);
-            this.panelALL.Controls.Add(this.pictureBox11);
-            this.panelALL.Location = new System.Drawing.Point(510, 0);
+            this.panelALL.Location = new System.Drawing.Point(148, 0);
             this.panelALL.Name = "panelALL";
-            this.panelALL.Size = new System.Drawing.Size(2378, 1600);
+            this.panelALL.Size = new System.Drawing.Size(2740, 1600);
             this.panelALL.TabIndex = 8;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.pictureBox11);
+            this.panel10.Location = new System.Drawing.Point(319, 8);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(2280, 555);
+            this.panel10.TabIndex = 26;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::formQLmain.Properties.Resources.home__1_;
+            this.pictureBox11.Location = new System.Drawing.Point(3, 13);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(2102, 961);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 0;
+            this.pictureBox11.TabStop = false;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnRefreshDash);
             this.groupBox3.Controls.Add(this.grdRecent);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(1945, 730);
+            this.groupBox3.Location = new System.Drawing.Point(1945, 756);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(754, 858);
+            this.groupBox3.Size = new System.Drawing.Size(754, 832);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
             // 
@@ -774,7 +800,7 @@
             // 
             this.groupBox2.Controls.Add(this.chartYearly);
             this.groupBox2.Controls.Add(this.chartByKhoa);
-            this.groupBox2.Location = new System.Drawing.Point(39, 732);
+            this.groupBox2.Location = new System.Drawing.Point(39, 756);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1900, 835);
             this.groupBox2.TabIndex = 24;
@@ -823,9 +849,9 @@
             this.groupBox1.Controls.Add(this.panel11);
             this.groupBox1.Controls.Add(this.panel17);
             this.groupBox1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupBox1.Location = new System.Drawing.Point(39, 471);
+            this.groupBox1.Location = new System.Drawing.Point(39, 555);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(2660, 261);
+            this.groupBox1.Size = new System.Drawing.Size(2660, 219);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             // 
@@ -833,9 +859,9 @@
             // 
             this.panel13.Controls.Add(this.label4);
             this.panel13.Controls.Add(this.lblTotalTaiKhoan);
-            this.panel13.Location = new System.Drawing.Point(2083, 13);
+            this.panel13.Location = new System.Drawing.Point(2091, 14);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(456, 242);
+            this.panel13.Size = new System.Drawing.Size(456, 199);
             this.panel13.TabIndex = 3;
             // 
             // label4
@@ -843,7 +869,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(44, 63);
+            this.label4.Location = new System.Drawing.Point(27, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(399, 59);
             this.label4.TabIndex = 4;
@@ -853,7 +879,7 @@
             // 
             this.lblTotalTaiKhoan.AutoSize = true;
             this.lblTotalTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTaiKhoan.Location = new System.Drawing.Point(231, 153);
+            this.lblTotalTaiKhoan.Location = new System.Drawing.Point(221, 109);
             this.lblTotalTaiKhoan.Name = "lblTotalTaiKhoan";
             this.lblTotalTaiKhoan.Size = new System.Drawing.Size(48, 59);
             this.lblTotalTaiKhoan.TabIndex = 1;
@@ -863,9 +889,9 @@
             // 
             this.panel12.Controls.Add(this.label3);
             this.panel12.Controls.Add(this.lblTotalTaiLieu);
-            this.panel12.Location = new System.Drawing.Point(1444, 13);
+            this.panel12.Location = new System.Drawing.Point(1452, 20);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(456, 242);
+            this.panel12.Size = new System.Drawing.Size(456, 193);
             this.panel12.TabIndex = 2;
             // 
             // label3
@@ -873,7 +899,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(64, 63);
+            this.label3.Location = new System.Drawing.Point(64, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(347, 59);
             this.label3.TabIndex = 3;
@@ -883,7 +909,7 @@
             // 
             this.lblTotalTaiLieu.AutoSize = true;
             this.lblTotalTaiLieu.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTaiLieu.Location = new System.Drawing.Point(206, 153);
+            this.lblTotalTaiLieu.Location = new System.Drawing.Point(200, 109);
             this.lblTotalTaiLieu.Name = "lblTotalTaiLieu";
             this.lblTotalTaiLieu.Size = new System.Drawing.Size(48, 59);
             this.lblTotalTaiLieu.TabIndex = 1;
@@ -893,9 +919,9 @@
             // 
             this.panel11.Controls.Add(this.label2);
             this.panel11.Controls.Add(this.lblTotalSinhVien);
-            this.panel11.Location = new System.Drawing.Point(802, 9);
+            this.panel11.Location = new System.Drawing.Point(810, 20);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(440, 242);
+            this.panel11.Size = new System.Drawing.Size(440, 189);
             this.panel11.TabIndex = 1;
             // 
             // label2
@@ -903,7 +929,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(25, 63);
+            this.label2.Location = new System.Drawing.Point(20, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(389, 59);
             this.label2.TabIndex = 2;
@@ -913,7 +939,7 @@
             // 
             this.lblTotalSinhVien.AutoSize = true;
             this.lblTotalSinhVien.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSinhVien.Location = new System.Drawing.Point(150, 153);
+            this.lblTotalSinhVien.Location = new System.Drawing.Point(198, 113);
             this.lblTotalSinhVien.Name = "lblTotalSinhVien";
             this.lblTotalSinhVien.Size = new System.Drawing.Size(48, 59);
             this.lblTotalSinhVien.TabIndex = 1;
@@ -923,9 +949,9 @@
             // 
             this.panel17.Controls.Add(this.label1);
             this.panel17.Controls.Add(this.lblTotalDoAn);
-            this.panel17.Location = new System.Drawing.Point(165, 13);
+            this.panel17.Location = new System.Drawing.Point(173, 20);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(486, 242);
+            this.panel17.Size = new System.Drawing.Size(486, 193);
             this.panel17.TabIndex = 0;
             // 
             // label1
@@ -933,7 +959,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label1.Location = new System.Drawing.Point(75, 63);
+            this.label1.Location = new System.Drawing.Point(91, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(324, 59);
             this.label1.TabIndex = 1;
@@ -943,29 +969,11 @@
             // 
             this.lblTotalDoAn.AutoSize = true;
             this.lblTotalDoAn.Font = new System.Drawing.Font("Segoe UI", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDoAn.Location = new System.Drawing.Point(209, 153);
+            this.lblTotalDoAn.Location = new System.Drawing.Point(214, 121);
             this.lblTotalDoAn.Name = "lblTotalDoAn";
             this.lblTotalDoAn.Size = new System.Drawing.Size(48, 59);
             this.lblTotalDoAn.TabIndex = 0;
             this.lblTotalDoAn.Text = "0";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(599, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(713, 43);
-            this.textBox1.TabIndex = 22;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::formQLmain.Properties.Resources.nhohonhon;
-            this.pictureBox11.Location = new System.Drawing.Point(560, 1);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(2139, 475);
-            this.pictureBox11.TabIndex = 21;
-            this.pictureBox11.TabStop = false;
             // 
             // FrmQLmain
             // 
@@ -1015,7 +1023,8 @@
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelALL.ResumeLayout(false);
-            this.panelALL.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdRecent)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -1030,7 +1039,6 @@
             this.panel11.PerformLayout();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1102,8 +1110,9 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalDoAn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

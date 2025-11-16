@@ -890,6 +890,13 @@ GROUP BY
             this.Hide();
         }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
         private void label8_Click(object sender, EventArgs e)
         {
 

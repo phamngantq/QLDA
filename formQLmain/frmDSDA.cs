@@ -360,31 +360,31 @@ namespace formQLmain
             maDoAnCu = "";
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string kw = textbox_TimKiem2.Text.Trim();
-            if (string.IsNullOrEmpty(kw))
-            {
-                grdDoAn.DataSource = repo.getAllDoAn();
-                return;
-            }
-            grdDoAn.DataSource = repo.searchDoAn(kw);
-        }
+        //private void btnTimKiem_Click(object sender, EventArgs e)
+        //{
+        //    string kw = textbox_TimKiem.Text.Trim();
+        //    if (string.IsNullOrEmpty(kw))
+        //    {
+        //        grdDoAn.DataSource = repo.getAllDoAn();
+        //        return;
+        //    }
+        //    grdDoAn.DataSource = repo.searchDoAn(kw);
+        //}
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            textbox_TimKiem2.Clear();
-            grdDoAn.DataSource = repo.getAllDoAn();
-        }
+        //private void btnRefresh_Click(object sender, EventArgs e)
+        //{
+        //    textbox_TimKiem.Clear();
+        //    grdDoAn.DataSource = repo.getAllDoAn();
+        //}
 
-        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true; // tránh tiếng 'ding'
-                btnTimKiem_Click(sender, e);
-            }
-        }
+        //private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        e.SuppressKeyPress = true; // tránh tiếng 'ding'
+        //        btnTimKiem_Click(sender, e);
+        //    }
+        //}
 
         private void grdDoAn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -702,6 +702,22 @@ JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        //private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        e.SuppressKeyPress = true; // tránh tiếng 'ding'
+        //        btnTimKiem_Click(sender, e);
+        //    }
+        //}
 
         private void comTruong_SelectedIndexChanged(object sender, EventArgs e)
         {

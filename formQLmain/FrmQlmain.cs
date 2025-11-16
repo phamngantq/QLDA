@@ -171,8 +171,9 @@ namespace formQLmain
 
         private void button1_Click(object sender, EventArgs e)
         {
-         //   frmQLhome f = new frmQLhome();
-          //  f.Show();
+            FrmQLmain f = new FrmQLmain();
+            f.Show();
+            this.Hide();
         }
 
        
@@ -206,7 +207,9 @@ namespace formQLmain
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
@@ -411,6 +414,11 @@ namespace formQLmain
             frmBaocao f = new frmBaocao(_userRole);
             f.Show();
             this.Hide();
+        }
+
+        private void pictureBox11_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
     }
