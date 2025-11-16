@@ -219,7 +219,7 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             SV.HOTEN,
             SV.CHUYENNGANH,
             SV.KHOA,
-            DA.GVHD,
+            GVHD.GVHD,
             DA.NAMBAOVE,
             DA.TOMTAT,
 	        SV.LOP,
@@ -232,6 +232,7 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             FROM DOAN_YEUTHICH Y
             JOIN DOAN DA          ON DA.MADOAN = Y.MADOAN
             JOIN SINHVIEN SV      ON SV.MASINHVIEN = DA.MASINHVIEN  
+            JOIN GVHD ON GVHD.MAGVHD = DA.MAGVHD
             JOIN TAILIEUBC TL     ON TL.MATAILIEUBC = DA.MATAILIEUBC
             JOIN TUKHOA_DOAN TKDA ON TKDA.MADOAN = DA.MADOAN
             JOIN TUKHOA TK        ON TK.MATUKHOA = TKDA.MATUKHOA
@@ -241,7 +242,7 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             SV.HOTEN,
             SV.CHUYENNGANH,
             SV.KHOA,
-            DA.GVHD,
+            GVHD.GVHD,
             DA.NAMBAOVE,
             DA.TOMTAT,
             SV.LOP,
