@@ -13,9 +13,21 @@ namespace formQLmain
 {
     public partial class FrmQLmain : Form
     {
+        private string _userRole; // Biến lưu vai trò
+        public FrmQLmain(string role)
+        //public FrmQLmain()
+
+        {
+
+            InitializeComponent();
+            _userRole = role; // Lưu vai trò từ FrmLogin
+        }
+
+        // Hàm tạo mặc định
         public FrmQLmain()
         {
             InitializeComponent();
+            _userRole = string.Empty;
         }
         public bool Expand = false; // khai báo biến Expand 
         public bool Expand2 = false; // khai báo biến Expand2 
@@ -392,6 +404,13 @@ namespace formQLmain
             Console.WriteLine(Expandmenu);
             pictureBox12.Visible = true;
             Console.ReadLine();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            frmBaocao f = new frmBaocao(_userRole);
+            f.Show();
+            this.Hide();
         }
     }
     }

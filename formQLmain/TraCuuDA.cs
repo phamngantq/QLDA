@@ -61,7 +61,7 @@ SELECT
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     DA.NAMBAOVE,
     DA.TOMTAT,
     TLBC.FILEBC,
@@ -73,10 +73,10 @@ SELECT
     DA.MADOAN
 FROM DOAN DA
 JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN
+JOIN GVHD  ON DA.MAGVHD = GVHD.MAGVHD
 JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC = TLBC.MATAILIEUBC
 JOIN TUKHOA_DOAN TKDA ON TKDA.MADOAN = DA.MADOAN
-JOIN TUKHOA TK ON TK.MATUKHOA = TKDA.MATUKHOA
-";
+JOIN TUKHOA TK ON TK.MATUKHOA = TKDA.MATUKHOA";
 
             // GROUP BY (cuối cùng) - giữ nguyên các cột không aggregate
             string groupBy = @"
@@ -85,7 +85,7 @@ GROUP BY
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     DA.NAMBAOVE,
     DA.TOMTAT,
     TLBC.FILEBC,
@@ -112,7 +112,7 @@ WHERE DA.TENDETAI    LIKE @kw
    OR SV.HOTEN       LIKE @kw
    OR SV.CHUYENNGANH LIKE @kw
    OR SV.KHOA        LIKE @kw
-   OR DA.GVHD        LIKE @kw
+   OR GVHD.GVHD        LIKE @kw
 ";
                 sql += groupBy;
 
@@ -148,7 +148,7 @@ WHERE DA.TENDETAI    LIKE @kw
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     DA.NAMBAOVE,
     DA.TOMTAT,
     TLBC.FILEBC,
@@ -160,6 +160,7 @@ WHERE DA.TENDETAI    LIKE @kw
     DA.MADOAN
 FROM DOAN DA
 JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN
+JOIN GVHD  ON DA.MAGVHD = GVHD.MAGVHD
 JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC = TLBC.MATAILIEUBC
 JOIN TUKHOA_DOAN TKDA ON TKDA.MADOAN = DA.MADOAN
 JOIN TUKHOA TK ON TK.MATUKHOA = TKDA.MATUKHOA
@@ -168,7 +169,7 @@ GROUP BY
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     DA.NAMBAOVE,
     DA.TOMTAT,
     TLBC.FILEBC,
@@ -229,7 +230,7 @@ GROUP BY
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     DA.NAMBAOVE,
     DA.TOMTAT,
     TLBC.FILEBC,
@@ -241,6 +242,7 @@ GROUP BY
     DA.MADOAN
 FROM DOAN DA
 JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN
+JOIN GVHD  ON DA.MAGVHD = GVHD.MAGVHD
 JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC = TLBC.MATAILIEUBC
 JOIN TUKHOA_DOAN TKDA ON TKDA.MADOAN = DA.MADOAN
 JOIN TUKHOA TK ON TK.MATUKHOA = TKDA.MATUKHOA
@@ -249,7 +251,7 @@ GROUP BY
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     DA.NAMBAOVE,
     DA.TOMTAT,
     TLBC.FILEBC,
@@ -356,7 +358,7 @@ GROUP BY
 
             try
             {
-                sql = "Select distinct " + comTruong.Text + " FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN ";
+                sql = "Select distinct " + comTruong.Text + " FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN JOIN GVHD  ON DA.MAGVHD = GVHD.MAGVHD ";
                 da = new SqlDataAdapter(sql, conn);
                 DataTable dt1 = new DataTable();
                 da.Fill(dt1);
@@ -378,7 +380,7 @@ GROUP BY
 
         private void btnFillter_Click(object sender, EventArgs e)
         {
-            sql = " SELECT  DA.TENDETAI, SV.HOTEN, SV.CHUYENNGANH, SV.KHOA, DA.GVHD, DA.NAMBAOVE, DA.TOMTAT FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN WHERE " + comTruong.Text + "= N'" + comGT.Text + "'";// Đảm bảo mọi dữ liệu có tiếng việt vẫn lọc được
+            sql = " SELECT  DA.TENDETAI, SV.HOTEN, SV.CHUYENNGANH, SV.KHOA, GVHD.GVHD, DA.NAMBAOVE, DA.TOMTAT FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN JOIN GVHD  ON DA.MAGVHD = GVHD.MAGVHD WHERE " + comTruong.Text + "= N'" + comGT.Text + "'";// Đảm bảo mọi dữ liệu có tiếng việt vẫn lọc được
             da = new SqlDataAdapter(sql, conn);
             dt = new DataTable();
             da.Fill(dt);

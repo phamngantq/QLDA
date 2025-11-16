@@ -69,13 +69,13 @@ namespace formQLmain
             {
                 sql = "SELECT * FROM TAIKHOAN WHERE EMAIL='" + txtEmail.Text +
                       "' AND MATKHAU='" + txtPassword.Text +
-                      "' AND VAITRO='QUANLY'";
+                      "' AND (VAITRO='QUANLY' OR VAITRO='GIANGVIEN')";
             }
             else // loginMode == "USER"
             {
                 sql = "SELECT * FROM TAIKHOAN WHERE EMAIL='" + txtEmail.Text +
                       "' AND MATKHAU='" + txtPassword.Text +
-                      "' AND (VAITRO='SINHVIEN' OR VAITRO='GIANGVIEN')";
+                      "' AND VAITRO='SINHVIEN' ";
             }
             // Mở kết nối Sql
             conn.Open();
@@ -99,12 +99,12 @@ namespace formQLmain
                 }
                 else if (role == "GIANGVIEN")
                 {
-                    frmTracuu f = new frmTracuu();
+                    var f = new FrmQLmain(role);
                     f.Show();
                 }
                 else if (role == "QUANLY")
                 {
-                    var f = new formQLmain.FrmQLmain();
+                    var f = new FrmQLmain(role);
                     f.Show();
                 }
 

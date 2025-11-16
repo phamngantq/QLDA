@@ -1,4 +1,5 @@
 ﻿using DevExpress.CodeParser;
+using DevExpress.DataAccess.Sql;
 using DevExpress.XtraCharts.Native;
 using DevExpress.XtraReports.UI;
 using System;
@@ -25,9 +26,16 @@ namespace formQLmain
         public bool Expand2 = false; // khai báo biến Expand2 
         public bool Expandmenu = false; // khai báo biến Expand2 
 
+        // THÊM: Biến lưu vai trò người dùng
+        private string _userRole;
+
         public frmBaocao()
+        { InitializeComponent(); }
+        public frmBaocao(string userRole)
         {
             InitializeComponent();
+
+            _userRole = userRole; // Gán vai trò người dùng
         }
 
         private void grdBaocao_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -47,7 +55,7 @@ namespace formQLmain
 
         private void comTruong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql = "Select distinct " + comTruong.Text + " FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN ";
+            sql = "Select distinct " + comTruong.Text + " FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD ";
             da = new SqlDataAdapter(sql, conn);
             DataTable dt1 = new DataTable();
             da.Fill(dt1);
@@ -65,10 +73,10 @@ namespace formQLmain
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     YEAR(DA.NAMBAOVE) AS N'NĂM'
 FROM DOAN DA
-JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN WHERE " + comTruong.Text + "= N'" + comGT.Text + "'";// Đảm bảo mọi dữ liệu có tiếng việt vẫn lọc được
+JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD WHERE " + comTruong.Text + "= N'" + comGT.Text + "'";// Đảm bảo mọi dữ liệu có tiếng việt vẫn lọc được
             da = new SqlDataAdapter(sql, conn);
             dt = new DataTable();
             da.Fill(dt);
@@ -86,10 +94,11 @@ JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN WHERE " + comTruong.Text + "
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     YEAR(DA.NAMBAOVE) AS N'NĂM'
 FROM DOAN DA
-JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN"; 
+JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN
+JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD"; 
                 da = new SqlDataAdapter(sql, conn);
                 dt = new DataTable();
                 dt.Clear();
@@ -108,8 +117,15 @@ JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN";
 
         private void btnInBC_Click(object sender, EventArgs e)
         {
+            //  PHÂN QUYỀN: Kiểm tra nếu là GIANGVIEN
+            if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngừng thực thi và không tiến hành in
+            }
+
             rptDoann rpt = new rptDoann();
-            sql = "SELECT DA.TENDETAI, SV.HOTEN, SV.CHUYENNGANH, SV.KHOA, DA.GVHD, YEAR(DA.NAMBAOVE) AS N'NĂM' FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN" +
+            sql = "SELECT DA.TENDETAI, SV.HOTEN, SV.CHUYENNGANH, SV.KHOA, DA.GVHD, YEAR(DA.NAMBAOVE) AS N'NĂM' FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN JOIN GVHD ON GVHD.MAGVHD = DA.MAGVHD" +
                 " where " + comTruong.Text + " = N'" + comGT.Text + " '";
 
             da = new SqlDataAdapter(sql, conn);
@@ -135,10 +151,11 @@ JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN";
     SV.HOTEN,
     SV.CHUYENNGANH,
     SV.KHOA,
-    DA.GVHD,
+    GVHD.GVHD,
     YEAR(DA.NAMBAOVE) AS N'NĂM'
    FROM DOAN DA
-JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN";
+JOIN SINHVIEN SV   ON DA.MASINHVIEN = SV.MASINHVIEN 
+JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
             conn.Open();
             da = new SqlDataAdapter(sql, conn);
             da.Fill(dt);
