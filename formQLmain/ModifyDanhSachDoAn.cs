@@ -318,6 +318,56 @@ namespace formQLmain
                 conn.Close();
             }
         }
+        // 
+        public DataTable searchDoAn(string keyword)
+        {
+            DataTable dt = new DataTable();
+
+            string sql = @"
+        SELECT 
+            DA.MADOAN,
+            DA.TENDETAI,
+            DA.MASINHVIEN,
+            GVHD.MAGVHD,
+            DA.NAMBAOVE,
+            DA.TOMTAT,
+            DA.MATAILIEUBC,
+            TLBC.FILEBC,
+            TLBC.SLIDE,
+            TLBC.LY_LICH,
+            TK.MATUKHOA,
+            TK.TUKHOA
+        FROM DOAN DA
+        JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC = TLBC.MATAILIEUBC
+        JOIN TUKHOA_DOAN TKDA ON TKDA.MADOAN = DA.MADOAN
+        JOIN TUKHOA TK ON TK.MATUKHOA = TKDA.MATUKHOA
+        JOIN GVHD ON GVHD.MAGVHD = DA.MAGVHD
+        WHERE 
+            DA.MADOAN          LIKE @kw OR
+            DA.TENDETAI        LIKE @kw OR
+            DA.MASINHVIEN      LIKE @kw OR
+            GVHD.MAGVHD        LIKE @kw OR
+            DA.TOMTAT          LIKE @kw OR
+            DA.MATAILIEUBC     LIKE @kw OR
+            TLBC.FILEBC        LIKE @kw OR
+            TLBC.SLIDE         LIKE @kw OR
+            TLBC.LY_LICH       LIKE @kw OR
+            TK.TUKHOA          LIKE @kw OR
+            CONVERT(varchar(10), DA.NAMBAOVE, 120) LIKE @kw
+        ";
+
+            using (SqlConnection conn = Connection.getConnection())
+            using (SqlCommand cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.Add("@kw", SqlDbType.NVarChar).Value = "%" + keyword + "%";
+                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
 
         // (tuỳ chọn) kiểm tra trùng mã
         public bool exists(string maDoAn)
@@ -332,31 +382,31 @@ namespace formQLmain
             }
         }
         // Tìm theo mọi cột chính + ngày bảo vệ (yyyy-MM-dd)
-        public DataTable searchDoAn(string keyword)
-        {
-            DataTable dt = new DataTable();
-            string sql = @"
-                SELECT DA.MADOAN,DA.TENDETAI,DA.MASINHVIEN, GVHD.MAGVHD, DA.NAMBAOVE, DA.TOMTAT,DA.MATAILIEUBC,TLBC.MATAILIEUBC,TLBC.FILEBC, TLBC.SLIDE,TLBC.LY_LICH,TK.MATUKHOA,TK.TUKHOA FROM DOAN DA 
-                   JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON TKDA.MADOAN=DA.MADOAN JOIN TUKHOA TK ON TK.MATUKHOA=TKDA.MATUKHOA JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD 
-                WHERE MADOAN      LIKE @kw
-                   OR TENDETAI    LIKE @kw
-                   OR MASINHVIEN  LIKE @kw
-                   OR MAGVHD        LIKE @kw
-                   OR TOMTAT      LIKE @kw
-                   OR MATAILIEUBC LIKE @kw
-                   OR CONVERT(varchar(10), NAMBAOVE, 120) LIKE @kw
-                   OR MATAILIEUBC LIKE @KW";
+        //public DataTable searchDoAn(string keyword)
+        //{
+        //    DataTable dt = new DataTable();
+        //    string sql = @"
+        //        SELECT DA.MADOAN,DA.TENDETAI,DA.MASINHVIEN, GVHD.MAGVHD, DA.NAMBAOVE, DA.TOMTAT,DA.MATAILIEUBC,TLBC.MATAILIEUBC,TLBC.FILEBC, TLBC.SLIDE,TLBC.LY_LICH,TK.MATUKHOA,TK.TUKHOA FROM DOAN DA 
+        //           JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON TKDA.MADOAN=DA.MADOAN JOIN TUKHOA TK ON TK.MATUKHOA=TKDA.MATUKHOA JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD 
+        //        WHERE MADOAN      LIKE @kw
+        //           OR TENDETAI    LIKE @kw
+        //           OR MASINHVIEN  LIKE @kw
+        //           OR MAGVHD        LIKE @kw
+        //           OR TOMTAT      LIKE @kw
+        //           OR MATAILIEUBC LIKE @kw
+        //           OR CONVERT(varchar(10), NAMBAOVE, 120) LIKE @kw
+        //           OR MATAILIEUBC LIKE @KW";
 
-            using (SqlConnection conn = Connection.getConnection())
-            using (SqlCommand cmd = new SqlCommand(sql, conn))
-            {
-                cmd.Parameters.Add("@kw", SqlDbType.NVarChar).Value = "%" + keyword + "%";
-                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                {
-                    da.Fill(dt);
-                }
-            }
-            return dt;
-        }
+        //    using (SqlConnection conn = Connection.getConnection())
+        //    using (SqlCommand cmd = new SqlCommand(sql, conn))
+        //    {
+        //        cmd.Parameters.Add("@kw", SqlDbType.NVarChar).Value = "%" + keyword + "%";
+        //        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+        //        {
+        //            da.Fill(dt);
+        //        }
+        //    }
+        //    return dt;
+        //}
     }
 }

@@ -151,8 +151,8 @@
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(420, 102);
             this.btnUser.TabIndex = 32;
-            this.btnUser.Text = "Đăng nhập với tư cách người dùng";
-            this.toolUser.SetToolTip(this.btnUser, "Nếu bạn là sinh viên hoặc giảng viên");
+            this.btnUser.Text = "Đăng nhập với tư cách sinh viên";
+            this.toolUser.SetToolTip(this.btnUser, "Nếu bạn là sinh viên");
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // label2
@@ -207,8 +207,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Name = "frmHome";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Home";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

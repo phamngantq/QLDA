@@ -123,5 +123,32 @@ namespace formQLmain
 
             return dt;
         }
+        public DataTable GetRecentDoAn(int take = 10)
+        {
+            var dt = new DataTable();
+
+            string sql = @"
+        SELECT TOP (@take)
+               MADOAN, TENDETAI, MASINHVIEN, NAMBAOVE
+        FROM DOAN
+        ORDER BY 
+            CASE WHEN TRY_CONVERT(datetime, NAMBAOVE, 105) IS NOT NULL 
+                 THEN TRY_CONVERT(datetime, NAMBAOVE, 105) 
+                 ELSE TRY_CONVERT(datetime, NAMBAOVE) 
+            END DESC, NAMBAOVE DESC;";
+
+            using (var conn = Connection.getConnection())
+            using (var cmd = new SqlCommand(sql, conn))
+            {
+                cmd.Parameters.Add("@take", SqlDbType.Int).Value = take;
+
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
     }
 }

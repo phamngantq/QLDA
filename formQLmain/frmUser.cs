@@ -80,7 +80,7 @@ namespace formQLmain
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -122,6 +122,19 @@ namespace formQLmain
             frmHome f = new frmHome();
             f.Show();
             this.Hide();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
         }
     }
 }

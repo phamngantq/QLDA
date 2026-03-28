@@ -38,6 +38,13 @@ namespace formQLmain
             _userRole = userRole; // Gán vai trò người dùng
         }
 
+        public void NapCT()
+        {
+           
+
+
+        }
+
         private void grdBaocao_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -122,6 +129,8 @@ JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
             {
                 MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Ngừng thực thi và không tiến hành in
+
+
             }
 
             rptDoann rpt = new rptDoann();
@@ -227,8 +236,106 @@ JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
             Console.ReadLine();
         }
 
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            grdBaocao.ClearSelection();
+            grdBaocao.CurrentCell = grdBaocao[0, 0];
+        }
+
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            int i = grdBaocao.CurrentRow.Index;
+            if (i > 0)
+            {
+                grdBaocao.CurrentCell = grdBaocao[0, i - 1];
+               
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int i = grdBaocao.CurrentRow.Index;
+            if (i < grdBaocao.Rows.Count - 1)
+            {
+                grdBaocao.CurrentCell = grdBaocao[0, i + 1];
+                NapCT();
+            }
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            int i = grdBaocao.Rows.Count - 1;
+            grdBaocao.CurrentCell = grdBaocao[0, i - 1];
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmQLmain f = new FrmQLmain();
+            f.Show();
+            this.Hide();
+        }
+
+        private void btndropQLDL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnDSDA_Click(object sender, EventArgs e)
+        {
+            frmDSDA f = new frmDSDA();
+            f.Show();
+            this.Hide();
+
+        }
+
+        private void btnTracuu_Click(object sender, EventArgs e)
+        {
+            frmTLTK f = new frmTLTK();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmQLSV f = new frmQLSV();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmQLTK f = new frmQLTK();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
         private void frmBaocao_Load(object sender, EventArgs e)
         {
+            //if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return; // Ngừng thực thi và không tiến hành in
+
+
+            //}
+
 
             sql = @"SELECT 
     DA.TENDETAI,
@@ -245,6 +352,8 @@ JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
             da.Fill(dt);
             grdBaocao.DataSource = dt;
             grdBaocao.Refresh();
+
+
         }
     }
 }

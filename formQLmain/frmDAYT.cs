@@ -290,6 +290,19 @@ MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             Console.ReadLine();
         }
 
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
         private void frmDAYT_Load(object sender, EventArgs e)
         {
             sql = @"SELECT

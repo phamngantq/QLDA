@@ -873,7 +873,9 @@ GROUP BY
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            frmTracuu f = new frmTracuu();
+            f.Show();
+            this.Hide();
         }
 
         private void btnLove_Click(object sender, EventArgs e)
@@ -895,6 +897,29 @@ GROUP BY
             frmHome f = new frmHome();
             f.Show();
             this.Hide();
+        }
+
+        private void panelALL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void panelMenu_Paint_1(object sender, PaintEventArgs e)
+        {
+            
         }
 
         private void label8_Click(object sender, EventArgs e)

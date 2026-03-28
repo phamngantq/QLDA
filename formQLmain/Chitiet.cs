@@ -202,7 +202,7 @@ namespace formQLmain
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmTracuu f = new frmTracuu();
+            frmDAYT f = new frmDAYT();
             f.Show();
             this.Hide();
         }
@@ -212,6 +212,76 @@ namespace formQLmain
             frmHome f = new frmHome();  
             f.Show();
             this.Hide();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmUser f = new frmUser();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtpickNambaove_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenDA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLop_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGVHD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtKeyword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTomtat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFileBC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSlide_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtliLich_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

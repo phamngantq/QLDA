@@ -69,23 +69,26 @@ namespace formQLmain
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+           
             frmQLTK f = new frmQLTK();
             f.Show();
+            this.Hide();
         }
 
         private void btnDSDA_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             frmDSDA f = new frmDSDA();
             f.Show();
+            this.Hide();
         }
 
         private void btnTLKT_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmTracuu f = new frmTracuu();
+            
+            frmTLTK f = new frmTLTK();
             f.Show();
+            this.Hide();
         }
 
         private void btndropQLDL_Click(object sender, EventArgs e)
@@ -298,6 +301,26 @@ namespace formQLmain
 
         private void menutimer_Tick(object sender, EventArgs e)
         {
+            if (Expand == true)
+            {
+                dropdown.Height -= 15;
+                if (dropdown.Height <= dropdown.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand = false;
+                }
+            }
+            if (Expand2 == true)
+            {
+                dropdown2.Height -= 15;
+                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand2 = false;
+                }
+            }
             // trượt dọc đã làm được 
             if (Expandmenu == false)
             {
@@ -541,6 +564,7 @@ namespace formQLmain
 
         private void btn__Click(object sender, EventArgs e)
         {
+            grdSinhVien.CurrentCell = grdSinhVien[0, 2]; // nhảy đến dòng 2
             SyncFromGrid();
             btnLuu.Visible = false; // hiện nút Lưu lên 
             label_Thongbao.Visible = false;
@@ -603,7 +627,27 @@ namespace formQLmain
 
         private void button6_Click_1(object sender, EventArgs e)
         {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
 
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            frmBaocao f = new frmBaocao();
+            f.Show();
+            this.Hide();
         }
 
         //private void comboBox_ChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)

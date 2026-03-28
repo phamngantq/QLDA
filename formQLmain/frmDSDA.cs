@@ -16,14 +16,24 @@ namespace formQLmain
 {
     public partial class frmDSDA : Form
     {
+        private string _userRole; // Biến lưu vai trò
+
+
         SqlConnection conn = new SqlConnection("Data Source=LAPTOP-D4IEITM3\\SQLEXPRESS02;Initial Catalog=DOAN;User ID=sa;Password=Sa@12345;TrustServerCertificate=True");
         SqlDataAdapter da = new SqlDataAdapter();
         SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         string sql, constr;
+        public frmDSDA(string userRole)
+        {
+            InitializeComponent();
+            _userRole = userRole;
+        }
         public frmDSDA()
         {
             InitializeComponent();
+            _userRole = string.Empty;
+            
         }
 
         public void NapCT()
@@ -82,7 +92,7 @@ namespace formQLmain
         private void btnTLKT_Click(object sender, EventArgs e)
         {
             
-            frmTracuu f = new frmTracuu();
+            frmTLTK f = new frmTLTK();
             f.Show();
             this.Hide();
         }
@@ -154,7 +164,9 @@ namespace formQLmain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmQLmain f = new FrmQLmain();
+            f.Show();
+            this.Hide();
         }
 
         private void btndropQLDL_Click(object sender, EventArgs e)
@@ -634,6 +646,26 @@ JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON
 
         private void menutimer_Tick(object sender, EventArgs e)
         {
+            if (Expand == true)
+            {
+                dropdown.Height -= 15;
+                if (dropdown.Height <= dropdown.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand = false;
+                }
+            }
+            if (Expand2 == true)
+            {
+                dropdown2.Height -= 15;
+                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand2 = false;
+                }
+            }
             // trượt dọc đã làm được 
             if (Expandmenu == false)
             {
@@ -709,6 +741,75 @@ JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON
             f.Show();
             this.Hide();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            textbox_TimKiem.Clear();
+            grdDoAn.DataSource = repo.getAllDoAn();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string kw = textbox_TimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(kw))
+            {
+                grdDoAn.DataSource = repo.getAllDoAn();
+                return;
+            }
+            grdDoAn.DataSource = repo.searchDoAn(kw);
+        }
+
+        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // tránh tiếng 'ding'
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void panel10_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmDSDA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");  // đây là lệnh gửi phím tab
+                e.Handled = true;
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Tài khoản Giảng viên không có quyền lập báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngừng thực thi và không tiến hành in
+
+
+            }
+            frmBaocao f = new frmBaocao();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        
 
         //private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
         //{
