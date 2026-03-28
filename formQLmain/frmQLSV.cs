@@ -69,23 +69,26 @@ namespace formQLmain
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+           
             frmQLTK f = new frmQLTK();
             f.Show();
+            this.Hide();
         }
 
         private void btnDSDA_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             frmDSDA f = new frmDSDA();
             f.Show();
+            this.Hide();
         }
 
         private void btnTLKT_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmTracuu f = new frmTracuu();
+            
+            frmTLTK f = new frmTLTK();
             f.Show();
+            this.Hide();
         }
 
         private void btndropQLDL_Click(object sender, EventArgs e)
@@ -152,7 +155,9 @@ namespace formQLmain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmQLmain f = new FrmQLmain();
+            f.Show();
+            this.Hide();
         }
 
         private void pnlgrid_Paint(object sender, PaintEventArgs e)
@@ -236,28 +241,22 @@ namespace formQLmain
         }
         // $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string kw = textbox_TimKiem.Text.Trim();
+        //private void btnTimKiem_Click(object sender, EventArgs e)
+        //{
+        //    string kw = textbox_TimKiem.Text.Trim();
 
-            if (string.IsNullOrEmpty(kw))
-            {
-                // Không nhập gì → hiện tất cả
-                grdSinhVien.DataSource = modify.getAllSinhVien();
-                return;
-            }
+        //    if (string.IsNullOrEmpty(kw))
+        //    {
+        //        // Không nhập gì → hiện tất cả
+        //        grdSinhVien.DataSource = modify.getAllSinhVien();
+        //        return;
+        //    }
+        //}
 
-            grdSinhVien.DataSource = modify.searchSinhVien(kw);
-        }
-
-        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true; // khỏi kêu 'ding'
-                btnTimKiem_Click(sender, e);
-            }
-        }
+        //private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        //{
+            
+        //}
 
       
 
@@ -302,6 +301,26 @@ namespace formQLmain
 
         private void menutimer_Tick(object sender, EventArgs e)
         {
+            if (Expand == true)
+            {
+                dropdown.Height -= 15;
+                if (dropdown.Height <= dropdown.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand = false;
+                }
+            }
+            if (Expand2 == true)
+            {
+                dropdown2.Height -= 15;
+                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand2 = false;
+                }
+            }
             // trượt dọc đã làm được 
             if (Expandmenu == false)
             {
@@ -545,6 +564,7 @@ namespace formQLmain
 
         private void btn__Click(object sender, EventArgs e)
         {
+            grdSinhVien.CurrentCell = grdSinhVien[0, 2]; // nhảy đến dòng 2
             SyncFromGrid();
             btnLuu.Visible = false; // hiện nút Lưu lên 
             label_Thongbao.Visible = false;
@@ -558,6 +578,76 @@ namespace formQLmain
             btnCapNhat.Visible = false; // hiện nút Lưu lên 
             label_CapNhat.Visible = false;
             btn_Thoat2.Visible = false;
+        }
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        {
+            string kw = textbox_TimKiem.Text.Trim();
+
+            if (string.IsNullOrEmpty(kw))
+            {
+                // Không nhập gì → hiện tất cả
+                grdSinhVien.DataSource = modify.getAllSinhVien();
+                return;
+            }
+
+            grdSinhVien.DataSource = modify.searchSinhVien(kw);
+        }
+
+        private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void textbox_TimKiem2_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // khỏi kêu 'ding'
+                btnTimKiem_Click_1(sender, e);
+            }
+        }
+
+        private void panelALL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void panel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            frmBaocao f = new frmBaocao();
+            f.Show();
+            this.Hide();
         }
 
         //private void comboBox_ChuyenNganh_SelectedIndexChanged(object sender, EventArgs e)

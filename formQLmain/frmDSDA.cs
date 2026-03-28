@@ -16,14 +16,24 @@ namespace formQLmain
 {
     public partial class frmDSDA : Form
     {
+        private string _userRole; // Biến lưu vai trò
+
+
         SqlConnection conn = new SqlConnection("Data Source=LAPTOP-D4IEITM3\\SQLEXPRESS02;Initial Catalog=DOAN;User ID=sa;Password=Sa@12345;TrustServerCertificate=True");
         SqlDataAdapter da = new SqlDataAdapter();
         SqlCommand cmd = new SqlCommand();
         DataTable dt = new DataTable();
         string sql, constr;
+        public frmDSDA(string userRole)
+        {
+            InitializeComponent();
+            _userRole = userRole;
+        }
         public frmDSDA()
         {
             InitializeComponent();
+            _userRole = string.Empty;
+            
         }
 
         public void NapCT()
@@ -81,20 +91,26 @@ namespace formQLmain
 
         private void btnTLKT_Click(object sender, EventArgs e)
         {
-            frmTLKT f = new frmTLKT();
+            
+            frmTLTK f = new frmTLTK();
             f.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             frmQLSV f = new frmQLSV();
             f.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
             frmQLTK f = new frmQLTK();
             f.Show();
+            this.Hide();
         }
 
         private void QLDAdrop_Tick(object sender, EventArgs e)
@@ -148,7 +164,9 @@ namespace formQLmain
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmQLmain f = new FrmQLmain();
+            f.Show();
+            this.Hide();
         }
 
         private void btndropQLDL_Click(object sender, EventArgs e)
@@ -252,58 +270,26 @@ namespace formQLmain
 
       private void SyncFromGrid()
         {
-            //    if (grdDoAn.CurrentRow == null || grdDoAn.CurrentRow.IsNewRow) return;
+            if (grdDoAn.CurrentRow == null || grdDoAn.CurrentRow.IsNewRow) return;
 
-            //    var row = grdDoAn.CurrentRow;
+            var row = grdDoAn.CurrentRow;
 
-            //    txtbox_MaDoAn.Text = row.Cells["MADOAN"].Value?.ToString() ?? "";
-            //    txtbox_TenDeTai.Text = row.Cells["TENDETAI"].Value?.ToString() ?? "";
-            //    txtbox_MaSV.Text = row.Cells["MASINHVIEN"].Value?.ToString() ?? "";
-            //    txtbox_GVHD.Text = row.Cells["GVHD"].Value?.ToString() ?? "";
-            //    txtbox_MaTLBC.Text = row.Cells["MATAILIEUBC"].Value?.ToString() ?? "";
-            //    txtbox_TomTat.Text = row.Cells["TOMTAT"].Value?.ToString() ?? "";
-            //    //
-            //    txtbox_MaTLBC2.Text = row.Cells["MATAILIEUBC"].Value?.ToString() ?? "";
-            //    txtbox_FileBC.Text = row.Cells["FILEBC"].Value?.ToString() ?? "";
-            //    txtbox_Slide.Text = row.Cells["SLIDE"].Value?.ToString() ?? "";
-            //    txtbox_LyLich.Text = row.Cells["LY_LICH"].Value?.ToString() ?? "";
-            //    txtbox_MaTK.Text = row.Cells["MATUKHOA"].Value?.ToString() ?? "";
-            //    txtbox_TK.Text = row.Cells["TUKHOA"].Value?.ToString() ?? "";
-
-            //// DateTimePicker: set null/giá trị
-            //var cell = row.Cells["NAMBAOVE"].Value;
-            //if (cell == null || cell == DBNull.Value)
-            //{
-            //    dtpick_Nambaove.Checked = false;
-            //}
-            //else
-            //{
-            //    dtpick_Nambaove.Checked = true;
-            //    dtpick_Nambaove.Value = Convert.ToDateTime(cell);
-            //}
-
-            //maDoAnCu = txtbox_MaDoAn.Text;
-
-
-
-            int i = grdDoAn.CurrentRow.Index;
-            txtbox_MaDoAn.Text = grdDoAn.Rows[i].Cells[0].Value.ToString();
-            txtbox_TenDeTai.Text = grdDoAn.Rows[i].Cells[1].Value.ToString();
-            txtbox_MaSV.Text = grdDoAn.Rows[i].Cells[2].Value.ToString();
-            txtbox_GVHD.Text = grdDoAn.Rows[i].Cells[3].Value.ToString();
-            dtpick_Nambaove.Text = grdDoAn.Rows[i].Cells[4].Value.ToString();
-            txtbox_MaTLBC.Text = grdDoAn.Rows[i].Cells[5].Value.ToString();
-            txtbox_TomTat.Text = grdDoAn.Rows[i].Cells[6].Value.ToString();
-            txtbox_MaTLBC2.Text = grdDoAn.Rows[i].Cells[7].Value.ToString();
-            txtbox_FileBC.Text = grdDoAn.Rows[i].Cells[8].Value.ToString();
-            txtbox_Slide.Text = grdDoAn.Rows[i].Cells[9].Value.ToString();
-            txtbox_LyLich.Text = grdDoAn.Rows[i].Cells[10].Value.ToString();
-            txtbox_MaTK.Text = grdDoAn.Rows[i].Cells[11].Value.ToString();
-            txtbox_TK.Text = grdDoAn.Rows[i].Cells[12].Value.ToString();
-
+            txtbox_MaDoAn.Text = row.Cells["MADOAN"].Value?.ToString() ?? "";
+            txtbox_TenDeTai.Text = row.Cells["TENDETAI"].Value?.ToString() ?? "";
+            txtbox_MaSV.Text = row.Cells["MASINHVIEN"].Value?.ToString() ?? "";
+            txtbox_GVHD.Text = row.Cells["MAGVHD"].Value?.ToString() ?? "";
+            txtbox_MaTLBC.Text = row.Cells["MATAILIEUBC"].Value?.ToString() ?? "";
+            txtbox_TomTat.Text = row.Cells["TOMTAT"].Value?.ToString() ?? "";
+            //
+            txtbox_MaTLBC2.Text = row.Cells["MATAILIEUBC"].Value?.ToString() ?? "";
+            txtbox_FileBC.Text = row.Cells["FILEBC"].Value?.ToString() ?? "";
+            txtbox_Slide.Text = row.Cells["SLIDE"].Value?.ToString() ?? "";
+            txtbox_LyLich.Text = row.Cells["LY_LICH"].Value?.ToString() ?? "";
+            txtbox_MaTK.Text = row.Cells["MATUKHOA"].Value?.ToString() ?? "";
+            txtbox_TK.Text = row.Cells["TUKHOA"].Value?.ToString() ?? "";
 
             // DateTimePicker: set null/giá trị
-            var cell = grdDoAn.Rows[i].Cells["NAMBAOVE"].Value;
+            var cell = row.Cells["NAMBAOVE"].Value;
             if (cell == null || cell == DBNull.Value)
             {
                 dtpick_Nambaove.Checked = false;
@@ -315,6 +301,38 @@ namespace formQLmain
             }
 
             maDoAnCu = txtbox_MaDoAn.Text;
+
+
+
+            //int i = grdDoAn.CurrentRow.Index;
+            //txtbox_MaDoAn.Text = grdDoAn.Rows[i].Cells[0].Value.ToString();
+            //txtbox_TenDeTai.Text = grdDoAn.Rows[i].Cells[1].Value.ToString();
+            //txtbox_MaSV.Text = grdDoAn.Rows[i].Cells[2].Value.ToString();
+            //txtbox_GVHD.Text = grdDoAn.Rows[i].Cells[3].Value.ToString();
+            //dtpick_Nambaove.Text = grdDoAn.Rows[i].Cells[4].Value.ToString();
+            //txtbox_MaTLBC.Text = grdDoAn.Rows[i].Cells[5].Value.ToString();
+            //txtbox_TomTat.Text = grdDoAn.Rows[i].Cells[6].Value.ToString();
+            //txtbox_MaTLBC2.Text = grdDoAn.Rows[i].Cells[7].Value.ToString();
+            //txtbox_FileBC.Text = grdDoAn.Rows[i].Cells[8].Value.ToString();
+            //txtbox_Slide.Text = grdDoAn.Rows[i].Cells[9].Value.ToString();
+            //txtbox_LyLich.Text = grdDoAn.Rows[i].Cells[10].Value.ToString();
+            //txtbox_MaTK.Text = grdDoAn.Rows[i].Cells[11].Value.ToString();
+            //txtbox_TK.Text = grdDoAn.Rows[i].Cells[12].Value.ToString();
+
+
+            //// DateTimePicker: set null/giá trị
+            //var cell = grdDoAn.Rows[i].Cells["NAMBAOVE"].Value;
+            //if (cell == null || cell == DBNull.Value)
+            //{
+            //    dtpick_Nambaove.Checked = false;
+            //}
+            //else
+            //{
+            //    dtpick_Nambaove.Checked = true;
+            //    dtpick_Nambaove.Value = Convert.ToDateTime(cell);
+            //}
+
+            //maDoAnCu = txtbox_MaDoAn.Text;
 
 
             //int i = grdDoAn.CurrentRow.Index;
@@ -354,31 +372,31 @@ namespace formQLmain
             maDoAnCu = "";
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string kw = textbox_TimKiem.Text.Trim();
-            if (string.IsNullOrEmpty(kw))
-            {
-                grdDoAn.DataSource = repo.getAllDoAn();
-                return;
-            }
-            grdDoAn.DataSource = repo.searchDoAn(kw);
-        }
+        //private void btnTimKiem_Click(object sender, EventArgs e)
+        //{
+        //    string kw = textbox_TimKiem.Text.Trim();
+        //    if (string.IsNullOrEmpty(kw))
+        //    {
+        //        grdDoAn.DataSource = repo.getAllDoAn();
+        //        return;
+        //    }
+        //    grdDoAn.DataSource = repo.searchDoAn(kw);
+        //}
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            textbox_TimKiem.Clear();
-            grdDoAn.DataSource = repo.getAllDoAn();
-        }
+        //private void btnRefresh_Click(object sender, EventArgs e)
+        //{
+        //    textbox_TimKiem.Clear();
+        //    grdDoAn.DataSource = repo.getAllDoAn();
+        //}
 
-        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                e.SuppressKeyPress = true; // tránh tiếng 'ding'
-                btnTimKiem_Click(sender, e);
-            }
-        }
+        //private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        e.SuppressKeyPress = true; // tránh tiếng 'ding'
+        //        btnTimKiem_Click(sender, e);
+        //    }
+        //}
 
         private void grdDoAn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -401,6 +419,8 @@ namespace formQLmain
             btnLuu.Visible = true; // hiện nút Lưu lên 
             // nút lưu ở đây là nút thêm thật 
             // thêm mới là thêm giả 
+            label_Thongbao.Visible = true;
+            btn_Thoat.Visible = true;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -576,6 +596,229 @@ JOIN TAILIEUBC TLBC ON DA.MATAILIEUBC=TLBC.MATAILIEUBC JOIN  TUKHOA_DOAN TKDA ON
 
         }
 
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void menutimer_Tick(object sender, EventArgs e)
+        {
+            if (Expand == true)
+            {
+                dropdown.Height -= 15;
+                if (dropdown.Height <= dropdown.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand = false;
+                }
+            }
+            if (Expand2 == true)
+            {
+                dropdown2.Height -= 15;
+                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand2 = false;
+                }
+            }
+            // trượt dọc đã làm được 
+            if (Expandmenu == false)
+            {
+                panelMenu.Width += 25;
+                if (panelMenu.Width >= panelMenu.MaximumSize.Width)
+                {
+
+                    menutimer.Stop();
+                    Expandmenu = true;
+                    pictureBox12.Visible = true;
+                    panelALL.Left = 245;
+                }
+            }
+            else
+            {
+                panelMenu.Width -= 25;
+                if (panelMenu.Width <= panelMenu.MinimumSize.Width)
+                {
+                    menutimer.Stop();
+                    Expandmenu = false;
+                    pictureBox12.Visible = false;
+                    panelALL.Left = 73;
+                }
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SyncFromGrid();
+            MessageBox.Show("Bạn hãy nhập thông tin cần thay đổi vào các ô thông tin, sau đó nhấn nút Cập nhật");
+            //txtbox_MaSV.Focus();    // chuyển con trỏ đến textbox mã nhóm 
+            btnCapNhat.Visible = true; // hiện nút cập nhật lên
+            label_CapNhat.Visible = true;
+            btn_Thoat2.Visible = true;
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            grdDoAn.CurrentCell = grdDoAn[0, 2]; // nhảy đến dòng 2
+            SyncFromGrid();
+            btnLuu.Visible = false; // hiện nút Lưu lên 
+            label_Thongbao.Visible = false;
+            btn_Thoat.Visible = false;
+        }
+
+        private void btn_Thoat2_Click(object sender, EventArgs e)
+        {
+            SyncFromGrid();
+            btnCapNhat.Visible = false; // ẩn nút cập nhật  
+            label_CapNhat.Visible = false;
+            btn_Thoat2.Visible = false;
+        }
+
+        private void textbox_TimKiem2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelALL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textbox_TimKiem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            textbox_TimKiem.Clear();
+            grdDoAn.DataSource = repo.getAllDoAn();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string kw = textbox_TimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(kw))
+            {
+                grdDoAn.DataSource = repo.getAllDoAn();
+                return;
+            }
+            grdDoAn.DataSource = repo.searchDoAn(kw);
+        }
+
+        private void textbox_TimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // tránh tiếng 'ding'
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void panel10_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void frmDSDA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                SendKeys.Send("{TAB}");  // đây là lệnh gửi phím tab
+                e.Handled = true;
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Tài khoản Giảng viên không có quyền lập báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngừng thực thi và không tiến hành in
+
+
+            }
+            frmBaocao f = new frmBaocao();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        
+
+        //private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        e.SuppressKeyPress = true; // tránh tiếng 'ding'
+        //        btnTimKiem_Click(sender, e);
+        //    }
+        //}
 
         private void comTruong_SelectedIndexChanged(object sender, EventArgs e)
         {

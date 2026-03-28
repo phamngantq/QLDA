@@ -127,12 +127,14 @@ namespace formQLmain
         {
             frmQLTK f = new frmQLTK();
             f.Show();
+            this.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            frmTracuu f = new frmTracuu();
+            frmTLTK f = new frmTLTK();
             f.Show();
+            this.Hide();
         }
 
         private void pictureBox11_Click(object sender, EventArgs e) // đồng hồ của trượt dọc 
@@ -142,7 +144,26 @@ namespace formQLmain
 
         private void menutimer_Tick(object sender, EventArgs e)
         {
-            // trượt dọc đã làm được 
+            if (Expand == true)
+            {
+                dropdown.Height -= 15;
+                if (dropdown.Height <= dropdown.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand = false;
+                }
+            }
+            if (Expand2 == true)
+            {
+                dropdown2.Height -= 15;
+                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand2 = false;
+                }
+            }// trượt dọc đã làm được 
             if (Expandmenu == false)
             {
                 panelMenu.Width += 25;
@@ -171,8 +192,7 @@ namespace formQLmain
 
         private void button1_Click(object sender, EventArgs e)
         {
-         //   frmQLhome f = new frmQLhome();
-          //  f.Show();
+            
         }
 
        
@@ -196,17 +216,21 @@ namespace formQLmain
         {
             frmQLSV f = new frmQLSV();
             f.Show();
+            this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             frmDSDA f = new frmDSDA();
             f.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
@@ -322,18 +346,33 @@ namespace formQLmain
 
         private void BindRecentAccounts()
         {
-            var dt = _repo.GetRecentAccounts(10);
+            //var dt = _repo.GetRecentAccounts(10);
+            //grdRecent.DataSource = dt;
+
+            //// Tùy chọn: định dạng cột
+            //if (grdRecent.Columns.Contains("NGAYCAP"))
+            //{
+            //    grdRecent.Columns["NGAYCAP"].HeaderText = "Ngày cấp";
+            //}
+            //if (grdRecent.Columns.Contains("VAITRO"))
+            //{
+            //    grdRecent.Columns["VAITRO"].HeaderText = "Vai trò";
+            //}
+            var dt = _repo.GetRecentDoAn(10);   // Lấy 10 đồ án mới nhất
             grdRecent.DataSource = dt;
 
-            // Tùy chọn: định dạng cột
-            if (grdRecent.Columns.Contains("NGAYCAP"))
-            {
-                grdRecent.Columns["NGAYCAP"].HeaderText = "Ngày cấp";
-            }
-            if (grdRecent.Columns.Contains("VAITRO"))
-            {
-                grdRecent.Columns["VAITRO"].HeaderText = "Vai trò";
-            }
+            // Đổi tên header cho DataGridView
+            if (grdRecent.Columns.Contains("MADOAN"))
+                grdRecent.Columns["MADOAN"].HeaderText = "Mã đồ án";
+
+            if (grdRecent.Columns.Contains("TENDT"))
+                grdRecent.Columns["TENDT"].HeaderText = "Tên đề tài";
+
+            if (grdRecent.Columns.Contains("MASV"))
+                grdRecent.Columns["MASV"].HeaderText = "Sinh viên";
+
+            if (grdRecent.Columns.Contains("NAMBAOVE"))
+                grdRecent.Columns["NAMBAOVE"].HeaderText = "Năm bảo vệ";
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -408,9 +447,46 @@ namespace formQLmain
 
         private void button12_Click(object sender, EventArgs e)
         {
+            if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Tài khoản Giảng viên không có quyền lập báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngừng thực thi và không tiến hành in
+
+
+            }
             frmBaocao f = new frmBaocao(_userRole);
             f.Show();
             this.Hide();
+        }
+
+        private void pictureBox11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelALL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnRefreshDash_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
         }
     }
     }

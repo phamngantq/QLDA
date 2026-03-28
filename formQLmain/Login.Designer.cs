@@ -35,6 +35,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnAn = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnHien = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnBack = new System.Windows.Forms.Button();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLogin = new Guna.UI2.WinForms.Guna2Button();
@@ -44,8 +46,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnAn = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnHien = new Guna.UI2.WinForms.Guna2ImageButton();
             this.toolTipBack = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipMo = new System.Windows.Forms.ToolTip(this.components);
             this.guna2Panel1.SuspendLayout();
@@ -113,11 +113,46 @@
             this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.pictureBox1);
-            this.guna2Panel1.Location = new System.Drawing.Point(150, 118);
+            this.guna2Panel1.Location = new System.Drawing.Point(162, 60);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(940, 1502);
             this.guna2Panel1.TabIndex = 10;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btnAn
+            // 
+            this.btnAn.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnAn.HoverState.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnAn.Image = ((System.Drawing.Image)(resources.GetObject("btnAn.Image")));
+            this.btnAn.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAn.ImageRotate = 0F;
+            this.btnAn.ImageSize = new System.Drawing.Size(14, 14);
+            this.btnAn.Location = new System.Drawing.Point(725, 1023);
+            this.btnAn.Name = "btnAn";
+            this.btnAn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnAn.Size = new System.Drawing.Size(32, 32);
+            this.btnAn.TabIndex = 14;
+            this.toolTipMo.SetToolTip(this.btnAn, "Hiện mật khẩu");
+            this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
+            // 
+            // btnHien
+            // 
+            this.btnHien.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnHien.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnHien.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnHien.HoverState.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnHien.Image = ((System.Drawing.Image)(resources.GetObject("btnHien.Image")));
+            this.btnHien.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnHien.ImageRotate = 0F;
+            this.btnHien.ImageSize = new System.Drawing.Size(14, 14);
+            this.btnHien.Location = new System.Drawing.Point(725, 1023);
+            this.btnHien.Name = "btnHien";
+            this.btnHien.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnHien.Size = new System.Drawing.Size(32, 32);
+            this.btnHien.TabIndex = 15;
+            this.btnHien.Click += new System.EventHandler(this.btnHien_Click);
             // 
             // btnBack
             // 
@@ -245,41 +280,6 @@
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
-            // btnAn
-            // 
-            this.btnAn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnAn.HoverState.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnAn.Image = ((System.Drawing.Image)(resources.GetObject("btnAn.Image")));
-            this.btnAn.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAn.ImageRotate = 0F;
-            this.btnAn.ImageSize = new System.Drawing.Size(14, 14);
-            this.btnAn.Location = new System.Drawing.Point(725, 1023);
-            this.btnAn.Name = "btnAn";
-            this.btnAn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnAn.Size = new System.Drawing.Size(32, 32);
-            this.btnAn.TabIndex = 14;
-            this.toolTipMo.SetToolTip(this.btnAn, "Hiện mật khẩu");
-            this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
-            // 
-            // btnHien
-            // 
-            this.btnHien.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnHien.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnHien.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnHien.HoverState.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnHien.Image = ((System.Drawing.Image)(resources.GetObject("btnHien.Image")));
-            this.btnHien.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnHien.ImageRotate = 0F;
-            this.btnHien.ImageSize = new System.Drawing.Size(14, 14);
-            this.btnHien.Location = new System.Drawing.Point(725, 1023);
-            this.btnHien.Name = "btnHien";
-            this.btnHien.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.btnHien.Size = new System.Drawing.Size(32, 32);
-            this.btnHien.TabIndex = 15;
-            this.btnHien.Click += new System.EventHandler(this.btnHien_Click);
-            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -291,11 +291,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.pictureBox2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "FrmLogin";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogin";
+            this.TopMost = true;
+            this.TransparencyKey = System.Drawing.SystemColors.Control;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmLogin_KeyPress);

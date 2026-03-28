@@ -38,6 +38,13 @@ namespace formQLmain
             _userRole = userRole; // Gán vai trò người dùng
         }
 
+        public void NapCT()
+        {
+           
+
+
+        }
+
         private void grdBaocao_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -117,12 +124,14 @@ JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
 
         private void btnInBC_Click(object sender, EventArgs e)
         {
-            //  PHÂN QUYỀN: Kiểm tra nếu là GIANGVIEN
-            //if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
-            //{
-            //    MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return; // Ngừng thực thi và không tiến hành in
-            //}
+            //PHÂN QUYỀN: Kiểm tra nếu là GIANGVIEN
+            if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Ngừng thực thi và không tiến hành in
+
+
+            }
 
             rptDoann rpt = new rptDoann();
             sql = "SELECT DA.TENDETAI, SV.HOTEN, SV.CHUYENNGANH, SV.KHOA, GVHD.GVHD, YEAR(DA.NAMBAOVE) AS N'NĂM' FROM DOAN DA JOIN SINHVIEN SV ON DA.MASINHVIEN = SV.MASINHVIEN JOIN GVHD ON GVHD.MAGVHD = DA.MAGVHD" +
@@ -143,8 +152,190 @@ JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
 
         }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        private void menutimer_Tick(object sender, EventArgs e)
+        {
+            // trượt dọc đã làm được 
+            if (Expandmenu == false)
+            {
+                panelMenu.Width += 25;
+                if (panelMenu.Width >= panelMenu.MaximumSize.Width)
+                {
+
+                    menutimer.Stop();
+                    Expandmenu = true;
+                    pictureBox12.Visible = true;
+                    panelALL.Left = 245;
+                }
+            }
+            else
+            {
+                panelMenu.Width -= 25;
+                if (panelMenu.Width <= panelMenu.MinimumSize.Width)
+                {
+                    menutimer.Stop();
+                    Expandmenu = false;
+                    pictureBox12.Visible = false;
+                    panelALL.Left = 73;
+                }
+
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void btnFirst_Click(object sender, EventArgs e)
+        {
+            grdBaocao.ClearSelection();
+            grdBaocao.CurrentCell = grdBaocao[0, 0];
+        }
+
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            int i = grdBaocao.CurrentRow.Index;
+            if (i > 0)
+            {
+                grdBaocao.CurrentCell = grdBaocao[0, i - 1];
+               
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            int i = grdBaocao.CurrentRow.Index;
+            if (i < grdBaocao.Rows.Count - 1)
+            {
+                grdBaocao.CurrentCell = grdBaocao[0, i + 1];
+                NapCT();
+            }
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            int i = grdBaocao.Rows.Count - 1;
+            grdBaocao.CurrentCell = grdBaocao[0, i - 1];
+        }
+
+        private void button13_Click_1(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmQLmain f = new FrmQLmain();
+            f.Show();
+            this.Hide();
+        }
+
+        private void btndropQLDL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnDSDA_Click(object sender, EventArgs e)
+        {
+            frmDSDA f = new frmDSDA();
+            f.Show();
+            this.Hide();
+
+        }
+
+        private void btnTracuu_Click(object sender, EventArgs e)
+        {
+            frmTLTK f = new frmTLTK();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmQLSV f = new frmQLSV();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmQLTK f = new frmQLTK();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
         private void frmBaocao_Load(object sender, EventArgs e)
         {
+            //if (_userRole.Equals("GIANGVIEN", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    MessageBox.Show("Tài khoản Giảng viên không có quyền hạn In báo cáo.", "Không Có Quyền", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return; // Ngừng thực thi và không tiến hành in
+
+
+            //}
+
 
             sql = @"SELECT 
     DA.TENDETAI,
@@ -161,6 +352,8 @@ JOIN GVHD ON GVHD.MAGVHD=DA.MAGVHD";
             da.Fill(dt);
             grdBaocao.DataSource = dt;
             grdBaocao.Refresh();
+
+
         }
     }
 }

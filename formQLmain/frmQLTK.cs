@@ -30,23 +30,26 @@ namespace formQLmain
         private void btnDSDA_Click(object sender, EventArgs e)
         {
 
-            this.Close();
+            
             frmDSDA f = new frmDSDA();
             f.Show();
+            this.Hide();
         }
 
         private void btnTLKT_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmTracuu f = new frmTracuu();
+            
+            frmTLTK f = new frmTLTK();
             f.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+           
             frmQLSV f = new frmQLSV();
             f.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -175,67 +178,12 @@ namespace formQLmain
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            {
-                var tk = new TaiKhoan(
-                    txtbox_MaTK.Text.Trim(),
-                    txtbox_Email.Text.Trim(),
-                    txtbox_MatKhau.Text.Trim(),
-                    ParseNullableDate(txtbox_NgayCap.Text),
-                    ParseNullableDate(txtbox_NgayCapNhat.Text),
-                    txtbox_VaiTro.Text.Trim()
-                );
-
-                string err;
-                if (tkRepo.insert(tk, out err))
-                {
-                    MessageBox.Show("Thêm tài khoản thành công.", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
-                    ClearInputs();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm tài khoản thất bại.\nLỗi: " + err,
-                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+           
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(maTKCu) && grdTaiKhoan.CurrentRow != null)
-                maTKCu = grdTaiKhoan.CurrentRow.Cells["MATK"].Value?.ToString();
-
-            if (string.IsNullOrWhiteSpace(maTKCu))
-            {
-                MessageBox.Show("Vui lòng chọn tài khoản cần sửa từ bảng.",
-                    "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var tk = new TaiKhoan(
-                txtbox_MaTK.Text.Trim(),
-                txtbox_Email.Text.Trim(),
-                txtbox_MatKhau.Text.Trim(),
-                ParseNullableDate(txtbox_NgayCap.Text),
-                ParseNullableDate(txtbox_NgayCapNhat.Text),
-                txtbox_VaiTro.Text.Trim()
-            );
-
-            string err;
-            if (tkRepo.update(tk, maTKCu, out err))
-            {
-                MessageBox.Show("Cập nhật tài khoản thành công.", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
-                maTKCu = tk.MaTK; // cập nhật mã gốc nếu tiếp tục sửa
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại.\n" + err,
-                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -330,7 +278,7 @@ namespace formQLmain
             txtbox_Email.Focus();    // chuyển con trỏ đến textbox mã nhóm 
             ClearInputs();
             //#########################################################3
-            btnThem.Visible = true; // hiện nút Lưu lên 
+            btnLuu.Visible = true; // hiện nút Lưu lên 
             // nút lưu ở đây là nút thêm thật 
             // thêm mới là thêm giả 
         }
@@ -345,6 +293,26 @@ namespace formQLmain
 
         private void menutimer_Tick(object sender, EventArgs e)
         {
+            if (Expand == true)
+            {
+                dropdown.Height -= 15;
+                if (dropdown.Height <= dropdown.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand = false;
+                }
+            }
+            if (Expand2 == true)
+            {
+                dropdown2.Height -= 15;
+                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
+                {
+
+                    QLDLdrop.Stop();
+                    Expand2 = false;
+                }
+            }
             // trượt dọc đã làm được 
             if (Expandmenu == false)
             {
@@ -414,12 +382,179 @@ namespace formQLmain
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
+            {
+                var tk = new TaiKhoan(
+                    txtbox_MaTK.Text.Trim(),
+                    txtbox_Email.Text.Trim(),
+                    txtbox_MatKhau.Text.Trim(),
+                    ParseNullableDate(txtbox_NgayCap.Text),
+                    ParseNullableDate(txtbox_NgayCapNhat.Text),
+                    txtbox_VaiTro.Text.Trim()
+                );
 
+                string err;
+                if (tkRepo.insert(tk, out err))
+                {
+                    MessageBox.Show("Thêm tài khoản thành công.", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
+                    ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm tài khoản thất bại.\nLỗi: " + err,
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(maTKCu) && grdTaiKhoan.CurrentRow != null)
+                maTKCu = grdTaiKhoan.CurrentRow.Cells["MATK"].Value?.ToString();
 
+            if (string.IsNullOrWhiteSpace(maTKCu))
+            {
+                MessageBox.Show("Vui lòng chọn tài khoản cần sửa từ bảng.",
+                    "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var tk = new TaiKhoan(
+                txtbox_MaTK.Text.Trim(),
+                txtbox_Email.Text.Trim(),
+                txtbox_MatKhau.Text.Trim(),
+                ParseNullableDate(txtbox_NgayCap.Text),
+                ParseNullableDate(txtbox_NgayCapNhat.Text),
+                txtbox_VaiTro.Text.Trim()
+            );
+
+            string err;
+            if (tkRepo.update(tk, maTKCu, out err))
+            {
+                MessageBox.Show("Cập nhật tài khoản thành công.", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
+                maTKCu = tk.MaTK; // cập nhật mã gốc nếu tiếp tục sửa
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại.\n" + err,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnTimKiem_Click_1(object sender, EventArgs e)
+        {
+            string kw = textbox_TimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(kw))
+            {
+                grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
+                return;
+            }
+            grdTaiKhoan.DataSource = tkRepo.searchTaiKhoan(kw);
+        }
+
+        private void textbox_TimKiem_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                btnTimKiem_Click(sender, e);
+            }
+        }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            textbox_TimKiem.Clear();
+            grdTaiKhoan.DataSource = tkRepo.getAllTaiKhoan();
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            //####################################################3
+            int i = grdTaiKhoan.Rows.Count - 1; //#########
+            grdTaiKhoan.CurrentCell = grdTaiKhoan[0, i]; // nhảy đến dòng i (tức là dòng cuối  dòng cuối 
+            MessageBox.Show("Bạn hãy nhập thông tin  vào các ô thông tin, sau đó nhấn nút Lưu");
+            txtbox_MaTK.Focus();    // chuyển con trỏ đến textbox mã nhóm 
+            ClearInputs();
+            //#########################################################3
+            btnLuu.Visible = true; // hiện nút Lưu lên 
+            label_Thongbao.Visible = true;
+            btn_Thoat.Visible = true;
+
+            // nút lưu ở đây là nút thêm thật 
+            // thêm mới là thêm giả 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            SyncFromGrid();
+            MessageBox.Show("Bạn hãy nhập thông tin cần thay đổi vào các ô thông tin, sau đó nhấn nút Cập nhật");
+            //txtbox_MaSV.Focus();    // chuyển con trỏ đến textbox mã nhóm 
+            btnCapNhat.Visible = true; // hiện nút cập nhật lên
+            label_CapNhat.Visible = true;
+            btn_Thoat2.Visible = true;
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            grdTaiKhoan.CurrentCell = grdTaiKhoan[0, 2]; // nhảy đến dòng 2
+            SyncFromGrid();
+            btnLuu.Visible = false; // hiện nút Lưu lên 
+            label_Thongbao.Visible = false;
+            btn_Thoat.Visible = false;
+        }
+
+        private void btn_Thoat2_Click(object sender, EventArgs e)
+        {
+            SyncFromGrid();
+            btnCapNhat.Visible = false; // hiện nút Lưu lên 
+            label_CapNhat.Visible = false;
+            btn_Thoat2.Visible = false;
+        }
+
+        private void frmQLTK_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Nếu được bấm trên bàn phím là Enter thì chuyển sang điều khiển tiếp theo, gửi vào bộ xử lí là phím tab
+            if (e.KeyChar == (char)Keys.Enter) //nếu nút được bấm là Enter
+            {
+                SendKeys.Send("{TAB}");
+                e.Handled = true;
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            frmBaocao f = new frmBaocao();
+            f.Show();
+            this.Hide();
         }
     }
 }

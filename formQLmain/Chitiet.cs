@@ -56,9 +56,7 @@ namespace formQLmain
 
         private void btnDrop2_Click(object sender, EventArgs e)
         {
-            DSDAdrop.Start();
-            Console.WriteLine(Expand);
-            Console.ReadLine();
+            
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -97,29 +95,7 @@ namespace formQLmain
         
     }
 
-        private void DSDAdrop_Tick(object sender, EventArgs e)
-        {
-            if (Expand == false)
-            {
-                dropdown2.Height += 15;
-                if (dropdown2.Height >= dropdown2.MaximumSize.Height)
-                {
-
-                    DSDAdrop.Stop();
-                    Expand = true;
-                }
-            }
-            else
-            {
-                dropdown2.Height -= 15;
-                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
-                {
-
-                    DSDAdrop.Stop();
-                    Expand = false;
-                }
-            }
-        }
+        
 
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
@@ -136,6 +112,174 @@ namespace formQLmain
         }
 
         private void txtTenSV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menutimer_Tick(object sender, EventArgs e)
+        {
+            // trượt dọc đã làm được 
+            if (Expandmenu == false)
+            {
+                panelMenu.Width += 25;
+                if (panelMenu.Width >= panelMenu.MaximumSize.Width)
+                {
+
+                    menutimer.Stop();
+                    Expandmenu = true;
+
+
+                }
+            }
+            else
+            {
+                panelMenu.Width -= 25;
+                if (panelMenu.Width <= panelMenu.MinimumSize.Width)
+                {
+                    menutimer.Stop();
+                    Expandmenu = false;
+
+
+                }
+
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void btnLove_Click(object sender, EventArgs e)
+        {
+            frmTracuu f = new frmTracuu();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmDAYT f = new frmDAYT();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();  
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmUser f = new frmUser();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+
+            Console.ReadLine();
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dtpickNambaove_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenDA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLop_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGVHD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtKeyword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTomtat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFileBC_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSlide_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtliLich_TextChanged(object sender, EventArgs e)
         {
 
         }

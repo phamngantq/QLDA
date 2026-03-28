@@ -26,6 +26,7 @@ namespace formQLmain
         public bool Expand2 = false; // khai báo biến Expand2 
         public bool Expandmenu = false; // khai báo biến Expand2 
 
+
         //private frmDAYT _frmDayt;
 
         public frmTracuu()
@@ -295,9 +296,7 @@ GROUP BY
 
         private void btnDrop2_Click(object sender, EventArgs e)
         {
-                DSDAdrop.Start();
-            Console.WriteLine(Expand);
-            Console.ReadLine();
+               
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -510,73 +509,17 @@ GROUP BY
 
         private void btnDSDA_Click(object sender, EventArgs e)
         {
-            frmTracuu f = new frmTracuu();
-            f.Show();
-            this.Hide();
+            
         }
 
         private void btnTLKT_Click(object sender, EventArgs e)
         {
-            frmDAYT f = new frmDAYT();
-            f.Show();
-            this.Hide();
+            
         }
 
-        private void DSDAdrop_Tick(object sender, EventArgs e)
-        {
-            if (Expand == false)
-            {
-                dropdown2.Height += 15;
-                if (dropdown2.Height >= dropdown2.MaximumSize.Height)
-                {
+        
 
-                    DSDAdrop.Stop();
-                    Expand = true;
-                }
-            }
-            else
-            {
-                dropdown2.Height -= 15;
-                if (dropdown2.Height <= dropdown2.MinimumSize.Height)
-                {
-
-                    DSDAdrop.Stop();
-                    Expand = false;
-                }
-            }
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            TroGiupdrop.Start();
-            Console.WriteLine(Expand2);
-            Console.ReadLine();
-        }
-
-        private void TroGiupdrop_Tick(object sender, EventArgs e)
-        {
-
-            if (Expand2 == false)
-            {
-                trogiup.Height += 15;
-                if (trogiup.Height >= trogiup.MaximumSize.Height)
-                {
-
-                    TroGiupdrop.Stop();
-                    Expand2 = true;
-                }
-            }
-            else
-            {
-                trogiup.Height -= 15;
-                if (trogiup.Height <= trogiup.MinimumSize.Height)
-                {
-
-                    TroGiupdrop.Stop();
-                    Expand2 = false;
-                }
-            }
-        }
+       
 
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -857,6 +800,126 @@ GROUP BY
                     e.Handled = true;
                     break;
             }
+        }
+
+        private void menutimer_Tick(object sender, EventArgs e)
+        {
+            // trượt dọc đã làm được 
+            if (Expandmenu == false)
+            {
+                panelMenu.Width += 25;
+                if (panelMenu.Width >= panelMenu.MaximumSize.Width)
+                {
+
+                    menutimer.Stop();
+                    Expandmenu = true;
+                    pictureBox12.Visible = true;
+                    panelALL.Left = 245;
+                }
+            }
+            else
+            {
+                panelMenu.Width -= 25;
+                if (panelMenu.Width <= panelMenu.MinimumSize.Width)
+                {
+                    menutimer.Stop();
+                    Expandmenu = false;
+                    pictureBox12.Visible = false;
+                    panelALL.Left = 73;
+                }
+
+            }
+        }
+
+        private void pictureBox7_Click_1(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox8_Click_1(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox10_Click_1(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmTracuu f = new frmTracuu();
+            f.Show();
+            this.Hide();
+        }
+
+        private void btnLove_Click(object sender, EventArgs e)
+        {
+            frmDAYT f = new frmDAYT();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button4_Click_2(object sender, EventArgs e)
+        {
+            frmUser f = new frmUser();
+            f.Show();
+            this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            frmHome f = new frmHome();
+            f.Show();
+            this.Hide();
+        }
+
+        private void panelALL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            OpenHTML.OpenDefault();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            menutimer.Start();
+            Console.WriteLine(Expandmenu);
+            pictureBox12.Visible = true;
+            Console.ReadLine();
+        }
+
+        private void panelMenu_Paint_1(object sender, PaintEventArgs e)
+        {
+            
         }
 
         private void label8_Click(object sender, EventArgs e)
